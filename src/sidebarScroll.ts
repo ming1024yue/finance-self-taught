@@ -23,6 +23,13 @@ export function preserveSidebarScroll() {
   document.addEventListener("click", (event) => {
     const link = (event.target as Element).closest(".sidebar a");
     const sidebar = link?.closest<HTMLElement>(".sidebar");
-    if (sidebar) sessionStorage.setItem(storageKey, String(sidebar.scrollTop));
+    if (sidebar) {
+      sessionStorage.setItem(storageKey, String(sidebar.scrollTop));
+      document.body.classList.remove("menu-open");
+    }
   }, { capture: true });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") document.body.classList.remove("menu-open");
+  });
 }
