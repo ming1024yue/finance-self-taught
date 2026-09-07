@@ -15,6 +15,7 @@ import{socialScience,history}from"./humanitiesCatalog";
 import{preserveSidebarScroll}from"./sidebarScroll";
 import{enableThemeInteraction}from"./themeInteraction";
 import"./styles.css";import"./tools.css";import"./plan.css";import"./books.css";import"./mobile.css";import"./platform.css";import"./knowledge.css";import"./graph-interaction.css";import"./ollivere-theme.css";
+import"./subject-menu.css";
 
 const base=import.meta.env.BASE_URL.replace(/\/$/,"");
 const path=location.pathname.replace(base,"");

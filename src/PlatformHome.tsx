@@ -1,26 +1,38 @@
+import {useEffect,useRef,useState} from "react";
 import BrandLogo from "./BrandLogo";
 
 const base=import.meta.env.BASE_URL;
-const subjects=[
- {name:"数学",href:`${base}math/`,active:true},
- {name:"物理",href:`${base}physics/`,active:true},
- {name:"计算机",href:`${base}computer-science/`,active:true},
- {name:"金融",href:`${base}finance/`,active:true},
- {name:"生物",href:`${base}biology/`,active:true},
- {name:"心理学",href:`${base}psychology/`,active:true},
- {name:"社会科学",href:`${base}social-science/`,active:true},
- {name:"历史",href:`${base}history/`,active:true}
+type SubjectLink={name:string;href?:string};
+type Category={name:string;items:SubjectLink[]};
+const categories:Category[]=[
+ {name:"数学与计算机科学",items:[{name:"数学",href:`${base}math/`},{name:"计算机科学",href:`${base}computer-science/`}]},
+ {name:"自然科学",items:[{name:"物理",href:`${base}physics/`},{name:"化学"},{name:"生物",href:`${base}biology/`}]},
+ {name:"社会科学",items:[{name:"金融",href:`${base}finance/`},{name:"心理学",href:`${base}psychology/`},{name:"社会科学导论",href:`${base}social-science/`},{name:"历史",href:`${base}history/`}]},
+ {name:"工程学",items:[{name:"工程基础"},{name:"电子与电气工程"},{name:"机械工程"}]},
+ {name:"语言",items:[{name:"语言学"},{name:"汉语"},{name:"英语"}]},
+ {name:"文学",items:[{name:"文学理论"},{name:"中国文学"},{name:"世界文学"}]}
 ];
 
+function MenuItems({category,onSelect}:{category:Category;onSelect?:()=>void}){
+ return <>{category.items.map(item=>item.href?<a href={item.href} key={item.name} onClick={onSelect}>{item.name}<span>进入学科</span></a>:<span className="subject-coming" key={item.name}>{item.name}<small>筹备中</small></span>)}</>;
+}
+
 export default function PlatformHome(){
+ const [openCategory,setOpenCategory]=useState<string|null>(null),headerRef=useRef<HTMLElement>(null);
+ useEffect(()=>{const close=(event:PointerEvent)=>{if(!headerRef.current?.contains(event.target as Node))setOpenCategory(null)},escape=(event:KeyboardEvent)=>{if(event.key==="Escape")setOpenCategory(null)};document.addEventListener("pointerdown",close);document.addEventListener("keydown",escape);return()=>{document.removeEventListener("pointerdown",close);document.removeEventListener("keydown",escape)}},[]);
+ const active=categories.find(category=>category.name===openCategory);
  return <div className="platform">
-  <header className="platform-header">
+  <header className="platform-header" ref={headerRef}>
    <a className="platform-brand" href={base} aria-label="自学地图首页"><BrandLogo/><b>自学地图</b></a>
-   <nav className="platform-nav" aria-label="学科导航">
-    {subjects.map(subject=>subject.active?<a href={subject.href} key={subject.name}>{subject.name}</a>:<span key={subject.name} title="正在筹备中" aria-disabled="true">{subject.name}<small>筹备中</small></span>)}
-    <a href="#about">关于</a>
-    <a href="https://github.com/ming1024yue/finance-self-taught/issues" target="_blank" rel="noreferrer">共建</a>
+   <nav className="platform-nav" aria-label="学科分类导航">
+    {categories.map(category=><div className={`subject-menu${openCategory===category.name?" open":""}`} key={category.name}>
+     <button type="button" aria-expanded={openCategory===category.name} onClick={()=>setOpenCategory(current=>current===category.name?null:category.name)}>{category.name}<i aria-hidden="true"/></button>
+     <div className="subject-menu-panel"><MenuItems category={category} onSelect={()=>setOpenCategory(null)}/></div>
+    </div>)}
+    <a className="platform-simple-link" href="#about" onClick={()=>setOpenCategory(null)}>关于</a>
+    <a className="platform-simple-link" href="https://github.com/ming1024yue/finance-self-taught/issues" target="_blank" rel="noreferrer" onClick={()=>setOpenCategory(null)}>共建</a>
    </nav>
+   {active&&<div className="mobile-subject-panel"><strong>{active.name}</strong><MenuItems category={active} onSelect={()=>setOpenCategory(null)}/></div>}
   </header>
   <main className="platform-main">
    <section className="platform-hero">
