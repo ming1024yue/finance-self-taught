@@ -2,10 +2,10 @@ import BrandLogo from "./BrandLogo";
 
 const base=import.meta.env.BASE_URL;
 const subjects=[
- {name:"金融",href:`${base}finance/`,active:true},
  {name:"数学",href:`${base}math/`,active:true},
  {name:"物理",href:`${base}physics/`,active:true},
  {name:"计算机",href:`${base}computer-science/`,active:true},
+ {name:"金融",href:`${base}finance/`,active:true},
  {name:"生物",href:`${base}biology/`,active:true},
  {name:"心理学",href:`${base}psychology/`,active:true},
  {name:"社会科学",href:`${base}social-science/`,active:true},
