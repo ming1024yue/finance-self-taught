@@ -1,3 +1,32 @@
+.brand-logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  color: #262a2e;
+}
+
+.platform-brand {
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+header:not(.platform-header) nav a:first-child,
+.mobile-home {
+  align-items: center;
+  gap: 6px;
+}
+
+header:not(.platform-header) nav a:first-child::before,
+.mobile-home::before {
+  content: "";
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  background: url("/favicon.svg") center / contain no-repeat;
+}
+
 .menu-button,
 .mobile-overlay,
 .mobile-home {
