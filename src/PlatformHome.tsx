@@ -23,7 +23,7 @@ export default function PlatformHome(){
  const active=categories.find(category=>category.name===openCategory);
  return <div className="platform">
   <header className="platform-header" ref={headerRef}>
-   <a className="platform-brand" href={base} aria-label="自学地图首页"><BrandLogo/><b>自学地图</b></a>
+   <a className="platform-brand" href={base} aria-label="自学坊首页"><BrandLogo/><b>自学坊</b></a>
    <nav className="platform-nav" aria-label="学科分类导航">
     {categories.map(category=><div className={`subject-menu${openCategory===category.name?" open":""}`} key={category.name}>
      <button type="button" aria-expanded={openCategory===category.name} onClick={()=>setOpenCategory(current=>current===category.name?null:category.name)}>{category.name}<i aria-hidden="true"/></button>
