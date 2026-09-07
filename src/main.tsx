@@ -1,2 +1,20 @@
-import{createRoot}from"react-dom/client";import PlatformHome from"./PlatformHome";import KnowledgeGraphPlacement from"./KnowledgeGraphPlacement";import FinanceHome from"./Home";import TopicPage from"./TopicPage";import BooksPage from"./BooksPage";import{preserveSidebarScroll}from"./sidebarScroll";import{enableThemeInteraction}from"./themeInteraction";import"./styles.css";import"./tools.css";import"./plan.css";import"./books.css";import"./mobile.css";import"./platform.css";import"./knowledge.css";import"./graph-interaction.css";import"./ollivere-theme.css";
-const base=import.meta.env.BASE_URL.replace(/\/$/,"");const path=location.pathname.replace(base,"");const topic=path.match(/^\/(?:finance\/)?topics\/([^/]+)/)?.[1];const isFinanceHome=/^\/finance\/?$/.test(path);createRoot(document.getElementById("root")!).render(topic==="books"?<BooksPage/>:topic?<TopicPage slug={topic}/>:isFinanceHome?<FinanceHome/>:<><PlatformHome/><KnowledgeGraphPlacement/></>);preserveSidebarScroll();enableThemeInteraction();
+import{createRoot}from"react-dom/client";
+import PlatformHome from"./PlatformHome";
+import KnowledgeGraphPlacement from"./KnowledgeGraphPlacement";
+import FinanceHome from"./Home";
+import TopicPage from"./TopicPage";
+import BooksPage from"./BooksPage";
+import MathHome from"./MathHome";
+import MathTopicPage from"./MathTopicPage";
+import MathBooksPage from"./MathBooksPage";
+import{preserveSidebarScroll}from"./sidebarScroll";
+import{enableThemeInteraction}from"./themeInteraction";
+import"./styles.css";import"./tools.css";import"./plan.css";import"./books.css";import"./mobile.css";import"./platform.css";import"./knowledge.css";import"./graph-interaction.css";import"./ollivere-theme.css";
+
+const base=import.meta.env.BASE_URL.replace(/\/$/,"");
+const path=location.pathname.replace(base,"");
+const financeTopic=path.match(/^\/(?:finance\/)?topics\/([^/]+)/)?.[1];
+const mathTopic=path.match(/^\/math\/topics\/([^/]+)/)?.[1];
+const page=mathTopic==="books"?<MathBooksPage/>:mathTopic?<MathTopicPage slug={mathTopic}/>:path.match(/^\/math\/?$/)?<MathHome/>:financeTopic==="books"?<BooksPage/>:financeTopic?<TopicPage slug={financeTopic}/>:path.match(/^\/finance\/?$/)?<FinanceHome/>:<><PlatformHome/><KnowledgeGraphPlacement/></>;
+createRoot(document.getElementById("root")!).render(page);
+preserveSidebarScroll();enableThemeInteraction();
