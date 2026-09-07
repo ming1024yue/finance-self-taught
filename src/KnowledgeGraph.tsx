@@ -1,9 +1,9 @@
 import {useEffect,useRef,useState} from "react";
 type Node={id:string;label:string;group:string;x:number;y:number;size:number};
 type View={x:number;y:number;scale:number};
-const colors:Record<string,string>={数学:"#8794ad",计算机:"#789b96",经济学:"#aa9474",金融:"#78977f",物理:"#9187a5",生物:"#7f9b86",心理学:"#a58c9d",社会科学:"#a28f7c",历史:"#9b8875",交叉领域:"#505860"};
+const colors:Record<string,string>={数学:"#8794ad",计算机:"#789b96",经济学:"#aa9474",金融:"#78977f",物理:"#9187a5",化学:"#9a8f78",生物:"#7f9b86",心理学:"#a58c9d",社会科学:"#a28f7c",历史:"#9b8875",工程学:"#8d8379",语言:"#8f829d",文学:"#9d7f86",交叉领域:"#505860"};
 const initialNodes:Node[]=[
- {id:"math",label:"数学",group:"数学",x:.14,y:.17,size:9},{id:"cs",label:"计算机",group:"计算机",x:.43,y:.1,size:9},{id:"physics",label:"物理",group:"物理",x:.72,y:.15,size:9},{id:"biology",label:"生物",group:"生物",x:.91,y:.3,size:9},{id:"psychology",label:"心理学",group:"心理学",x:.91,y:.62,size:9},{id:"social",label:"社会科学",group:"社会科学",x:.72,y:.87,size:9},{id:"history",label:"历史",group:"历史",x:.2,y:.91,size:9},{id:"econ",label:"经济学",group:"经济学",x:.09,y:.65,size:9},{id:"finance",label:"金融",group:"金融",x:.43,y:.89,size:10},
+ {id:"math",label:"数学",group:"数学",x:.14,y:.17,size:9},{id:"cs",label:"计算机",group:"计算机",x:.43,y:.1,size:9},{id:"physics",label:"物理",group:"物理",x:.72,y:.15,size:9},{id:"chemistry",label:"化学",group:"化学",x:.9,y:.13,size:9},{id:"biology",label:"生物",group:"生物",x:.93,y:.32,size:9},{id:"psychology",label:"心理学",group:"心理学",x:.93,y:.59,size:9},{id:"social",label:"社会科学",group:"社会科学",x:.72,y:.87,size:9},{id:"history",label:"历史",group:"历史",x:.2,y:.91,size:9},{id:"econ",label:"经济学",group:"经济学",x:.09,y:.65,size:9},{id:"finance",label:"金融",group:"金融",x:.43,y:.89,size:10},{id:"engineering",label:"工程学",group:"工程学",x:.92,y:.91,size:9},{id:"language",label:"语言",group:"语言",x:.05,y:.39,size:9},{id:"literature",label:"文学",group:"文学",x:.06,y:.81,size:9},
  {id:"stats",label:"概率统计",group:"数学",x:.26,y:.35,size:5},{id:"opt",label:"优化",group:"数学",x:.34,y:.19,size:5},{id:"algo",label:"算法",group:"计算机",x:.55,y:.3,size:5},{id:"data",label:"数据科学",group:"计算机",x:.39,y:.4,size:5},{id:"mechanics",label:"力学",group:"物理",x:.75,y:.38,size:5},{id:"dynamics",label:"动力系统",group:"物理",x:.68,y:.52,size:5},{id:"micro",label:"微观经济学",group:"经济学",x:.25,y:.66,size:5},{id:"macro",label:"宏观经济学",group:"经济学",x:.24,y:.82,size:5},{id:"pricing",label:"资产定价",group:"金融",x:.4,y:.68,size:5},{id:"corp",label:"公司金融",group:"金融",x:.59,y:.73,size:5},
  {id:"ml",label:"机器学习",group:"交叉领域",x:.45,y:.39,size:8},{id:"metrics",label:"计量经济学",group:"交叉领域",x:.29,y:.54,size:8},{id:"quant",label:"量化研究",group:"交叉领域",x:.43,y:.61,size:8},{id:"fineng",label:"金融工程",group:"交叉领域",x:.56,y:.65,size:8},{id:"complex",label:"复杂系统",group:"交叉领域",x:.61,y:.39,size:8},{id:"robot",label:"机器人",group:"交叉领域",x:.77,y:.45,size:8},
  {id:"compbio",label:"计算生物学",group:"交叉领域",x:.69,y:.29,size:7},
@@ -39,7 +39,11 @@ const edges=[
  ["math","mathbio"],["biology","mathbio"],["dynamics","mathbio"],["stats","mathbio"],
  ["biology","epidemiology"],["stats","epidemiology"],["social","epidemiology"],["network","epidemiology"],
  ["cs","hci"],["psychology","hci"],["social","hci"],
- ["cs","compneuro"],["psychology","compneuro"],["biology","compneuro"],["ml","compneuro"],["cogsci","compneuro"]
+ ["cs","compneuro"],["psychology","compneuro"],["biology","compneuro"],["ml","compneuro"],["cogsci","compneuro"],
+ ["chemistry","physics"],["chemistry","biology"],["chemistry","biophysics"],["chemistry","compbio"],
+ ["engineering","math"],["engineering","physics"],["engineering","cs"],["engineering","robot"],["engineering","complex"],["engineering","quantumcomp"],
+ ["language","psychology"],["language","social"],["language","history"],["language","cogsci"],["language","hci"],["language","compsocial"],
+ ["literature","language"],["literature","history"],["literature","social"],["literature","digitalhumanities"]
 ];
 const descriptions:Record<string,string>={
  ml:"数学 × 计算机 × 统计",metrics:"经济学 × 数学 × 统计",quant:"金融 × 统计 × 计算机",fineng:"金融 × 数学 × 计算机",complex:"数学 × 物理 × 生物 × 社会科学",robot:"计算机 × 物理",
