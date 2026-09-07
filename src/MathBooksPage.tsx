@@ -10,6 +10,8 @@ const books=[
  ["Convex Optimization","https://web.stanford.edu/~boyd/cvxbook/","优化 · 进阶","Boyd 与 Vandenberghe 的经典教材，由 Stanford 官方免费提供。"]
 ];
 const portals=[
+ ["清华","清华大学：微积分","https://v1-www.xuetangx.com/courses/course-v1%3ATsinghuaX%2BAP000005X%2B2016_T2/about","从极限、导数与积分进入级数和常微分方程，适合大学数学起步。"],
+ ["南大","南京大学：近世代数","https://www.icourse163.org/course/NJU-1462062161","以初学者可进入的方式系统讲解群、环、域，并提供持续自学入口。"],
  ["MIT","MIT OpenCourseWare — Mathematics","https://ocw.mit.edu/search/?d=Mathematics","覆盖本科到研究生数学，讲义、作业和考试资料丰富。"],
  ["Harvard","Harvard Mathematics Courses","https://pll.harvard.edu/subject/mathematics","查找概率、统计、数据科学和数学基础公开课程。"],
  ["Stanford","Stanford Engineering Everywhere","https://see.stanford.edu/Course","包含线性系统、机器学习及相关数学课程资料。"],
@@ -17,4 +19,4 @@ const portals=[
  ["Carnegie Mellon","CMU Open Learning Initiative","https://oli.cmu.edu/","提供统计、逻辑和定量推理等交互课程。"],
  ["MIT","MIT 18.01SC Self-study Calculus","https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/","专为独立学习整理的视频、讲义、习题、考试与完整答案。"]
 ];
-export default function MathBooksPage(){return <div className="shell"><MathHeader/><MathSide active="books"/><main><section className="hero"><small>SELF-TAUGHT MATHEMATICS / 书单与资源</small><h1>书单与资源</h1><p>优先收录可以合法免费阅读的完整教材和大学官方公开课程。每个阶段选择一本主教材，课程用于补充讲解，习题用于检验理解。</p></section><section><h2>公开电子书</h2><p className="section-note">以下教材均可通过作者、学校或开放教育平台免费阅读。</p><div className="library-list">{books.map(([name,url,tag,text])=><article key={name}><i className="resource-mark book"/><div><small>{tag}</small><h3><a href={url} target="_blank" rel="noreferrer">{name} ↗</a></h3><p>{text}</p></div></article>)}</div></section><section><h2>名校公开课入口</h2><p className="section-note">进入课程后先阅读 syllabus 与 prerequisites，再决定是否作为主课。</p><div className="course-portals">{portals.map(([tag,name,url,text])=><article key={name}><span>{tag}</span><h3><a href={url} target="_blank" rel="noreferrer">{name} ↗</a></h3><p>{text}</p></article>)}</div></section></main></div>}
+export default function MathBooksPage(){return <div className="shell"><MathHeader/><MathSide active="books"/><main><section className="hero"><small>SELF-TAUGHT MATHEMATICS / 书单与资源</small><h1>书单与资源</h1><p>优先收录可以合法免费阅读的完整教材和大学官方公开课程。每个阶段选择一本主教材，课程用于补充讲解，习题用于检验理解。</p></section><section><h2>公开电子书</h2><p className="section-note">以下教材均可通过作者、学校或开放教育平台免费阅读。</p><div className="library-list">{books.map(([name,url,tag,text])=><article key={name}><i className="resource-mark book"/><div><small>{tag}</small><h3><a href={url} target="_blank" rel="noreferrer">{name} ↗</a></h3><p>{text}</p></div></article>)}</div></section><section><h2>名校公开课入口</h2><p className="section-note">中文资源仅选择学科实力突出且课程材料可公开访问的顶尖高校。进入课程后先阅读教学大纲与前置要求，再决定是否作为主课。</p><div className="course-portals">{portals.map(([tag,name,url,text])=><article key={name}><span>{tag}</span><h3><a href={url} target="_blank" rel="noreferrer">{name} ↗</a></h3><p>{text}</p></article>)}</div></section></main></div>}
