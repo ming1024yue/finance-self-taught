@@ -6,7 +6,7 @@ const books=[
  ["Book of Proof — Richard Hammack","https://richardhammack.github.io/BookOfProof/","证明 · 入门","从集合与逻辑开始训练直接证明、反证法和数学归纳法。"],
  ["OpenIntro Statistics","https://www.openintro.org/book/os/","统计学 · 入门","使用真实数据和练习介绍描述统计、抽样与统计推断。"],
  ["Basic Analysis — Jiří Lebl","https://www.jirka.org/ra/","实分析 · 进阶","两卷开放教材，从实数、序列与连续进入度量空间和多变量分析。"],
- ["Abstract Algebra: Theory and Applications","https://abstract.ups.edu/","抽象代数 · 进阶","开放教材，覆盖群、环、域及密码学等应用。"],
+ ["Abstract Algebra: Theory and Applications","https://judsonbooks.org/abstract-algebra-theory-and-applications/","抽象代数 · 进阶","开放教材，覆盖群、环、域及密码学等应用。"],
  ["Convex Optimization","https://web.stanford.edu/~boyd/cvxbook/","优化 · 进阶","Boyd 与 Vandenberghe 的经典教材，由 Stanford 官方免费提供。"]
 ];
 const portals=[

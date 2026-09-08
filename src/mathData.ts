@@ -58,7 +58,7 @@ export const mathTopics:Record<string,MathTopic>={
   R("MIT 18.100B Real Analysis","https://ocw.mit.edu/courses/18-100b-real-analysis-spring-2025/","高级","公开课","成熟的证明能力","更抽象地处理度量空间、紧致性与函数序列，适合理论方向。")
  ]},
  "abstract-algebra":{title:"抽象代数",intro:"通过群、环、域和同态研究结构与对称性。",resources:[
-  R("Abstract Algebra: Theory and Applications","https://abstract.ups.edu/","入门","开放教材","线性代数与证明基础","开放教材，用大量例子和练习引入群、环、域及应用。"),
+  R("Abstract Algebra: Theory and Applications","https://judsonbooks.org/abstract-algebra-theory-and-applications/","入门","开放教材","线性代数与证明基础","开放教材，用大量例子和练习引入群、环、域及应用。"),
   R("MIT Algebra I Student Notes","https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/","进阶","开放讲义","证明基础与线性代数","MIT 18.701 学生讲义，系统覆盖群作用、线性群和表示的起点。"),
   R("MIT 18.703 Modern Algebra","https://ocw.mit.edu/courses/18-703-modern-algebra-spring-2013/","高级","公开课","群论、线性代数与证明能力","更深入学习群、环、模、域扩张和 Galois 理论。")
  ]},
