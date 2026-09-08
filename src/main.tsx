@@ -1,6 +1,7 @@
 import{createRoot}from"react-dom/client";
 import PlatformHome from"./PlatformHome";
 import KnowledgeGraphPlacement from"./KnowledgeGraphPlacement";
+import Comments from"./Comments";
 import FinanceHome from"./Home";
 import TopicPage from"./TopicPage";
 import BooksPage from"./BooksPage";
@@ -17,7 +18,7 @@ import{language}from"./languageCatalog";
 import{literature}from"./literatureCatalog";
 import{preserveSidebarScroll}from"./sidebarScroll";
 import{enableThemeInteraction}from"./themeInteraction";
-import"./styles.css";import"./tools.css";import"./plan.css";import"./books.css";import"./mobile.css";import"./platform.css";import"./knowledge.css";import"./graph-interaction.css";import"./ollivere-theme.css";
+import"./styles.css";import"./tools.css";import"./plan.css";import"./books.css";import"./mobile.css";import"./platform.css";import"./knowledge.css";import"./graph-interaction.css";import"./ollivere-theme.css";import"./comments.css";
 import"./subject-menu.css";
 
 const base=import.meta.env.BASE_URL.replace(/\/$/,"");
@@ -29,5 +30,6 @@ const subject=subjects.find(item=>path.match(new RegExp(`^/${item.slug}(?:/|$)`)
 const subjectTopic=subject?path.match(new RegExp(`^/${subject.slug}/topics/([^/]+)`))?.[1]:undefined;
 const genericPage=subject?(subjectTopic==="books"?<SubjectBooksPage subject={subject}/>:subjectTopic?<SubjectTopicPage subject={subject} topicSlug={subjectTopic}/>:<SubjectHome subject={subject}/>):null;
 const page=genericPage??(mathTopic==="books"?<MathBooksPage/>:mathTopic?<MathTopicPage slug={mathTopic}/>:path.match(/^\/math\/?$/)?<MathHome/>:financeTopic==="books"?<BooksPage/>:financeTopic?<TopicPage slug={financeTopic}/>:path.match(/^\/finance\/?$/)?<FinanceHome/>:<><PlatformHome/><KnowledgeGraphPlacement/></>);
-createRoot(document.getElementById("root")!).render(page);
+const discussionKey=subject?`${subject.slug}/${subjectTopic??"home"}`:mathTopic?`math/${mathTopic}`:path.match(/^\/math\/?$/)?"math/home":financeTopic?`finance/${financeTopic}`:path.match(/^\/finance\/?$/)?"finance/home":null;
+createRoot(document.getElementById("root")!).render(<>{page}{discussionKey&&<div className="learning-comments"><Comments discussionKey={discussionKey}/></div>}</>);
 preserveSidebarScroll();enableThemeInteraction();

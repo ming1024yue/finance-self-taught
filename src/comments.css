@@ -1,0 +1,10 @@
+.comments-section{max-width:800px;margin:0 auto 60px;padding:50px 0 0;border-top:1px solid rgba(32,33,36,.1)}
+.comments-heading{margin-bottom:28px}
+.comments-heading small{letter-spacing:.17em;color:#747b84}
+.comments-heading h2{margin:8px 0 10px;border:0;padding:0}
+.comments-heading p,.comments-pending p{margin:0;color:var(--muted)}
+.comments-pending{padding:22px 24px;border-radius:10px;background:rgba(255,255,255,.46);border:1px solid rgba(32,33,36,.08)}
+.comments-pending b{display:block;margin-bottom:5px;font-size:14px}
+.giscus,.giscus-frame{width:100%}
+.learning-comments{margin-left:var(--side);padding:0 8vw}
+@media(max-width:800px){.learning-comments{margin-left:0;padding:0 22px}.comments-section{padding-top:36px;margin-bottom:36px}.comments-pending{padding:18px}}
