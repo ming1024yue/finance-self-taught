@@ -1,0 +1,10 @@
+.topic-curriculum{padding-bottom:46px}
+.topic-curriculum>p{max-width:720px;color:var(--muted)}
+.curriculum-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.curriculum-grid article{position:relative;padding:22px 22px 20px 58px;border:1px solid var(--line);border-radius:8px;background:rgba(255,255,255,.58)}
+.curriculum-grid article>span{position:absolute;left:20px;top:23px;color:#8a9097;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,monospace}
+.curriculum-grid h3{margin:0 0 8px;font-size:18px}
+.curriculum-grid p{margin:0;color:var(--muted)}
+.curriculum-grid p+p{margin-top:9px;color:#34383d}
+.curriculum-source{display:inline-block;margin-top:18px;color:#2457a7;font-size:13px}
+@media(max-width:700px){.curriculum-grid{grid-template-columns:1fr}.curriculum-grid article{padding:19px 18px 18px 52px}.curriculum-grid article>span{left:17px;top:20px}}

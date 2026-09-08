@@ -28,4 +28,46 @@ const engineeringTopics:Record<string,Topic>={
  projects:t("项目与进阶方向","围绕真实约束完成需求、模型、原型、测试和复盘。",[r("Arduino Project Hub","https://projecthub.arduino.cc/","入门","项目平台","基础电路与编程","从传感器或自动控制小项目开始。"),r("MIT D-Lab Resources","https://d-lab.mit.edu/resources","进阶","项目平台","工程基础与设计","关注可持续、可维护和真实用户需求。"),r("NASA Open Data Portal","https://data.nasa.gov/","高级","项目平台","建模、编程与领域知识","用公开工程数据完成建模或可靠性分析。")]),
  books:t("书单与资源","集中查看开放教材与大学工程课程。",[])
 };
+engineeringTopics.electrical.curriculum={basis:"参考 MIT 电气工程培养结构，将数学与编程之后的学习组织为电路、信号、电子系统、应用方向和综合实验，而不是机械式重复通用工程基础。",reference:["MIT Electrical Engineering with Computing (Course 6-5)","https://catalog.mit.edu/degree-charts/electrical-engineering-computing-course-6-5/"],stages:[
+ {title:"电路与物理系统",courses:"电路分析、模拟电子、数字电子、电磁场与半导体基础",practice:"仿真并搭建一个传感器放大或电源电路。"},
+ {title:"信号与系统",courses:"线性系统、傅里叶分析、概率、数字信号处理",practice:"采集真实信号，完成滤波、频谱分析与误差说明。"},
+ {title:"电子与能量转换",courses:"微电子、功率电子、通信、电机与能源系统",practice:"选择一个方向完成器件或系统级设计。"},
+ {title:"嵌入式与系统设计",courses:"微控制器、接口、实时系统、软硬件协同",practice:"制作包含传感、计算和执行器的闭环原型。"},
+ {title:"综合实验",courses:"测量、调试、可靠性、安全与工程沟通",practice:"提交原理图、测试数据、失效分析和设计复盘。"}
+]};
+engineeringTopics.mechanical.curriculum={basis:"参考 MIT 机械工程本科核心，将主线放在固体、热流体、动力学、制造和实验设计，突出机械系统的建模与实体实现。",reference:["MIT Mechanical Engineering (Course 2)","https://catalog.mit.edu/degree-charts/mechanical-engineering-course-2/"],stages:[
+ {title:"固体与材料力学",courses:"静力学、动力学、材料力学、机械结构",practice:"分析一个梁、支架或传动部件的载荷与变形。"},
+ {title:"热力学与流体",courses:"热力学、流体力学、传热、能量转换",practice:"建立热系统或流动系统的能量平衡与仿真。"},
+ {title:"动力学与控制",courses:"振动、系统动力学、传感器、反馈控制",practice:"辨识一个机械系统并设计稳定控制器。"},
+ {title:"设计与制造",courses:"机械设计、CAD、公差、制造过程与选材",practice:"完成可制造的装配设计、工程图和原型。"},
+ {title:"测量与产品实现",courses:"仪器、实验设计、数据分析、可靠性与成本",practice:"用实验验证性能，并迭代至少一次设计。"}
+]};
+engineeringTopics.computer.curriculum={basis:"参考 UIUC 计算机工程培养方案，将计算机工程明确放在电子硬件与计算机科学的交界处，主线是数字逻辑、体系结构、嵌入式系统和软硬件协同。",reference:["UIUC Computer Engineering, BS","https://catalog.illinois.edu/undergraduate/engineering/computer-engineering-bs/"],stages:[
+ {title:"编程与离散基础",courses:"C/C++、数据结构、离散数学、概率与低级编程",practice:"用 C 实现数据结构并理解内存、位运算和编译过程。"},
+ {title:"电路与数字逻辑",courses:"基础电路、电子学、组合逻辑、时序逻辑与 HDL",practice:"用 HDL 设计、仿真并测试一个处理器数据通路模块。"},
+ {title:"计算机体系结构",courses:"指令集、流水线、缓存、虚拟内存、并行计算",practice:"实现简化 CPU 或测量程序在存储层次中的性能。"},
+ {title:"嵌入式与网络系统",courses:"微控制器、实时系统、操作系统、接口与计算机网络",practice:"制作一个具备传感、通信和实时响应的嵌入式设备。"},
+ {title:"硬件系统项目",courses:"验证、调试、安全、可靠性与软硬件共同设计",practice:"交付代码、原理图、测试计划和端到端演示。"}
+]};
+engineeringTopics.aerospace.curriculum={basis:"参考 MIT AeroAstro 的 Unified Engineering 结构，把材料结构、流体、热力推进、信号与系统先统一起来，再进入飞行动力学、控制和航空或航天设计。",reference:["MIT Aerospace Engineering (Course 16)","https://catalog.mit.edu/schools/engineering/aeronautics-astronautics/"],stages:[
+ {title:"统一工程核心",courses:"材料与结构、流体力学、热力学、推进、信号与计算",practice:"为同一飞行器建立质量、载荷、能量和信息模型。"},
+ {title:"空气动力与推进",courses:"可压缩流、翼型、飞行性能、燃气轮机与火箭推进",practice:"比较不同翼型或推进方案的性能与适用边界。"},
+ {title:"结构与飞行动力学",courses:"轻质结构、振动、稳定性、轨道或飞行动力学",practice:"完成机翼结构、飞行稳定性或轨道任务分析。"},
+ {title:"导航制导与控制",courses:"状态空间、自动控制、估计、导航与自主系统",practice:"为无人机、卫星或飞行器设计制导控制仿真。"},
+ {title:"航空／航天系统设计",courses:"任务需求、系统权衡、安全、测试与适航意识",practice:"完成飞机或航天器概念设计及关键设计评审。"}
+]};
+engineeringTopics.systems.curriculum={basis:"参考 MIT 动态系统、控制与系统工程课程，将重点放在建模、反馈、估计、优化和跨组件集成，而非某一种实体设备。",reference:["MIT EECS — Dynamical System Modeling and Control Design","https://catalog.mit.edu/schools/engineering/electrical-engineering-computer-science/"],stages:[
+ {title:"数学建模",courses:"线性代数、微分方程、概率、状态空间与系统辨识",practice:"从数据建立一个动态系统模型并验证参数。"},
+ {title:"信号与动态系统",courses:"时域与频域分析、稳定性、可控性、可观性",practice:"解释模型的模态、响应速度和稳定边界。"},
+ {title:"反馈控制",courses:"PID、根轨迹、频率设计、状态反馈与鲁棒性",practice:"比较两种控制器在扰动和模型误差下的表现。"},
+ {title:"估计与优化",courses:"卡尔曼滤波、最优控制、约束优化、规划与决策",practice:"实现一个含噪状态估计或最优轨迹问题。"},
+ {title:"系统集成",courses:"需求、接口、可靠性、安全、验证与复杂性管理",practice:"为多组件系统建立需求追踪和验证矩阵。"}
+]};
+engineeringTopics.materials.curriculum={basis:"参考 MIT 材料科学培养方案，以加工—结构—性能—应用关系为主轴，区别于机械工程的宏观结构分析和化学的分子反应主线。",reference:["MIT Materials Science and Engineering (Course 3)","https://catalog.mit.edu/degree-charts/materials-science-engineering-course-3/"],stages:[
+ {title:"材料结构",courses:"原子键合、晶体、缺陷、相与微观组织",practice:"用结构数据或显微图解释一种材料的性质。"},
+ {title:"热力学与动力学",courses:"相平衡、扩散、相变、凝固与微结构演化",practice:"计算相稳定性并分析热处理路径。"},
+ {title:"材料性能",courses:"力学、电学、磁学、光学和热学性质",practice:"建立结构—性能关系并解释失效机制。"},
+ {title:"加工与表征",courses:"金属、陶瓷、聚合物、复合材料加工及表征方法",practice:"设计制程和表征方案，说明测量不确定度。"},
+ {title:"材料选择与研究",courses:"选材、寿命、可持续性、计算材料与实验设计",practice:"针对具体工况比较候选材料并给出验证计划。"}
+]};
 export const engineering:SubjectConfig={slug:"engineering",name:"工程学",en:"ENGINEERING",intro:"工程学把科学与数学转化为在约束条件下可靠工作的系统。核心不是套公式，而是需求、建模、权衡、实现、测试和迭代。",caution:"真实工程涉及安全、法规与责任。自学项目应从低风险原型开始，清楚记录假设和失效模式；高压、高温、结构承载等实验必须由专业人员指导。",groups:[start,["共同基础",[["tools","学习工具"],["foundations","工程基础"],["design","工程设计与制造"]]],["主要方向",[["electrical","电子与电气工程"],["mechanical","机械工程"],["computer","计算机工程"],["aerospace","航空航天工程"],["systems","控制与系统工程"],["materials","材料与结构"]]],["实践",[["projects","项目与进阶方向"],["books","书单与资源"]]]],topics:engineeringTopics,phases:[{time:"2–4 个月",title:"补齐数理与编程",goal:"获得分析工程系统的共同语言。",learn:"微积分、线性代数、力学、电磁、概率、Python。",done:"能建立简单系统模型并检查单位和数量级。",link:"foundations"},{time:"2–3 个月",title:"学习设计过程",goal:"从需求和约束而不是方案开始。",learn:"需求、功能分解、方案比较、制图、原型、测试。",done:"完成一个有设计记录的小型原型。",link:"design"},{time:"4–8 个月",title:"完成一个方向的核心",goal:"选择一个工程方向作为主线。",learn:"电气、机械、计算机或航空航天方向的核心课程。",done:"独立完成核心习题和一次仿真。",link:"electrical"},{time:"3–5 个月",title:"理解反馈和系统集成",goal:"分析组件连接后的动态与失效。",learn:"状态、反馈、稳定性、控制、可靠性与接口。",done:"构建并调试一个闭环系统。",link:"systems"},{time:"持续",title:"通过项目形成工程判断",goal:"在真实约束下权衡性能、成本和安全。",learn:"原型、测量、验证、文档和复盘。",done:"发布可复现的设计文件、测试结果和改进记录。",link:"projects"}],tools:[["设计与制造",[["FreeCAD","https://www.freecad.org/","开源参数化 CAD"],["KiCad","https://www.kicad.org/","开源电子设计自动化"],["Arduino","https://www.arduino.cc/","电子原型与嵌入式实践"]]],["仿真与计算",[["Python","https://www.python.org/","数值分析与自动化"],["GNU Octave","https://octave.org/","矩阵计算与系统仿真"],["LTspice","https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html","电路仿真"]]],["协作与记录",[["GitHub","https://github.com/","管理代码和设计版本"],["Jupyter","https://jupyter.org/","保存计算、图表和说明"],["Zotero","https://www.zotero.org/","管理标准、论文和资料"]]]],books:[["OpenStax University Physics","https://openstax.org/details/books/university-physics-volume-1","工程基础 · 入门","覆盖工程所需物理基础。"],["Feedback Systems","https://fbsbook.org/","控制 · 进阶","公开反馈控制教材。"],["MIT Mechanics of Materials","https://ocw.mit.edu/courses/3-11-mechanics-of-materials-fall-1999/","材料力学 · 进阶","含开放教材和习题。"]],portals:[["MIT","MIT OCW Engineering","https://ocw.mit.edu/search/?d=Engineering","电气、机械、土木、材料等完整课程。"],["OpenStax","OpenStax Science","https://openstax.org/subjects/science","工程数理基础教材。"],["MIT","MIT Open Learning Library","https://openlearning.mit.edu/courses-programs/open-learning-library","可交互学习部分工程课程。"]]};
