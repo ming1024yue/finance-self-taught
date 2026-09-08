@@ -1,0 +1,42 @@
+name: 提议新增学科或课程
+description: 讨论新的学科、课程结构或跨学科关系
+title: "[学科提议] "
+labels: ["学科规划", "需要讨论"]
+body:
+  - type: input
+    id: subject
+    attributes:
+      label: 学科或课程名称
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: 学习范围与目标
+      description: 说明学完后应具备什么能力，以及哪些内容不在范围内。
+    validations:
+      required: true
+  - type: textarea
+    id: curriculum
+    attributes:
+      label: 建议课程结构
+      description: 请按先后顺序列出核心课程及前置关系。
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: 参考依据
+      description: 请提供至少两所优秀大学的培养方案、课程设置或权威学科标准。
+    validations:
+      required: true
+  - type: textarea
+    id: intersections
+    attributes:
+      label: 与现有学科的关系
+      description: 如涉及知识图谱连线，请解释前置、方法共享或交叉研究关系。
+  - type: textarea
+    id: resources
+    attributes:
+      label: 候选公开资源
+      description: 列出可合法访问的课程或教材。

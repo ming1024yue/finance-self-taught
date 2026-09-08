@@ -1,0 +1,12 @@
+# 这些站点会阻止自动化客户端，但已经过人工浏览器验证。
+^https://elicit\.com/
+^https://materialsproject\.org/
+^https://online\.princeton\.edu/
+^https://opentextbc\.ca/
+^https://psycnet\.apa\.org/
+^https://projecteuler\.net/
+^https://public\.websites\.umich\.edu/
+^https://stat110\.hsites\.harvard\.edu/
+^https://web\.mit\.edu/
+^https://www\.allaboutcircuits\.com/
+^https://www\.europeana\.eu/

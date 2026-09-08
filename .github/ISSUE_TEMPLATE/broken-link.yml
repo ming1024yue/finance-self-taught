@@ -1,0 +1,50 @@
+name: 报告失效链接
+description: 报告打不开、跳转错误或内容已经下线的资源
+title: "[失效链接] "
+labels: ["失效链接", "待核查"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 自学坊页面
+      placeholder: https://selftaught.fun/...
+    validations:
+      required: true
+  - type: input
+    id: resource
+    attributes:
+      label: 资源名称
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 当前失效链接
+      placeholder: https://...
+    validations:
+      required: true
+  - type: dropdown
+    id: symptom
+    attributes:
+      label: 问题类型
+      options:
+        - 404 或页面不存在
+        - 无法连接或长期超时
+        - 跳转到无关内容
+        - 核心课程内容已撤下
+        - 要求付费或访问条件发生变化
+        - 其他
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: 具体情况
+      description: 请说明发生时间、错误提示，以及是否在不同网络或浏览器中复现。
+    validations:
+      required: true
+  - type: input
+    id: replacement
+    attributes:
+      label: 建议的新官方链接（可选）
+      placeholder: https://...

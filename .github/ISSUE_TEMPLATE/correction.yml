@@ -1,0 +1,31 @@
+name: 修正内容错误
+description: 修正课程描述、难度、前置要求或知识关系
+title: "[内容修正] "
+labels: ["内容修正", "待核查"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 相关页面
+      placeholder: https://selftaught.fun/...
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: 当前内容及问题
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: 建议修改为
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 依据
+      description: 请提供官方页面、教材、培养方案或其他可核查来源。
+    validations:
+      required: true
