@@ -36,7 +36,7 @@ export default function PlatformHome(){
   <main className="platform-main">
    <section className="platform-hero">
     <small>OPEN LEARNING PATHS</small>
-    <h1>为每一门学科，<br/>整理一条真正可走的自学路径。</h1>
+    <h1>为每一门学科，<br/>提供一条真正可走的自学路径。</h1>
     <p>本站希望减少优质教育资源与学习者之间的信息差。我们按照知识依赖关系，整理公开课、教材、论文、工具与实践项目，帮助零基础学习者逐步建立完整的知识体系。</p>
    </section>
    <section id="about" className="platform-about">
@@ -50,7 +50,7 @@ export default function PlatformHome(){
    </section>
    <section className="platform-contact">
     <small>CONTACT</small>
-    <p>如果你有建议、想推荐优质资源，或希望参与共建，欢迎发送邮件至 <a href="mailto:mingyueoct24@gmail.com">mingyueoct24@gmail.com</a>。</p>
+    <p>如果你有建议、想推荐优质资源，或希望参与共建，欢迎发送邮件至 <a href="mailto:mingyueoct24@gmail.com">mingyueoct24@gmail.com</a></p>
    </section>
   </main>
  </div>
