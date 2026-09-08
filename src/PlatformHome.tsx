@@ -49,6 +49,11 @@ export default function PlatformHome(){
      <p><b>实践</b><br/>通过习题、报告、代码和项目，把理解转化为能力。</p>
     </div>
    </section>
+   <section className="platform-contact">
+    <small>CONTACT</small>
+    <h2>联系我们</h2>
+    <p>如果你有建议、想推荐优质资源，或希望参与共建，欢迎发送邮件至 <a href="mailto:mingyueoct24@gmail.com">mingyueoct24@gmail.com</a>。</p>
+   </section>
   </main>
  </div>
 }
