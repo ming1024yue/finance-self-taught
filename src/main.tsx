@@ -13,7 +13,8 @@ import{physics,computerScience}from"./subjectCatalog";
 import{biology}from"./biologyCatalog";
 import{psychology}from"./psychologyCatalog";
 import{socialScience,history}from"./humanitiesCatalog";
-import{chemistry,engineering}from"./newSubjectsCatalog";
+import{chemistry}from"./newSubjectsCatalog";
+import{engineeringTracks}from"./engineeringTracks";
 import{language}from"./languageCatalog";
 import{literature}from"./literatureCatalog";
 import{preserveSidebarScroll}from"./sidebarScroll";
@@ -24,10 +25,15 @@ import"./subject-menu.css";
 import"./curriculum.css";
 
 const base=import.meta.env.BASE_URL.replace(/\/$/,"");
-const path=location.pathname.replace(base,"");
+let path=location.pathname.replace(base,"");
+const legacyEngineering=path.match(/^\/engineering\/topics\/(electrical|mechanical|computer|aerospace|systems|materials)\/?$/)?.[1];
+if(legacyEngineering){
+ path=`/engineering/${legacyEngineering}/`;
+ window.history.replaceState(null,"",`${base}${path}`);
+}
 const financeTopic=path.match(/^\/(?:finance\/)?topics\/([^/]+)/)?.[1];
 const mathTopic=path.match(/^\/math\/topics\/([^/]+)/)?.[1];
-const subjects=[physics,computerScience,biology,psychology,socialScience,history,chemistry,engineering,language,literature];
+const subjects=[...engineeringTracks,physics,computerScience,biology,psychology,socialScience,history,chemistry,language,literature];
 const subject=subjects.find(item=>path.match(new RegExp(`^/${item.slug}(?:/|$)`)));
 const matchedSubjectTopic=subject?path.match(new RegExp(`^/${subject.slug}/topics/([^/]+)`))?.[1]:undefined;
 const subjectTopic=subject?.slug==="literature"&&matchedSubjectTopic==="chinese"?"world":matchedSubjectTopic;
