@@ -10,7 +10,7 @@ const categories:Category[]=[
  {name:"社会科学",items:[{name:"金融",href:`${base}finance/`},{name:"心理学",href:`${base}psychology/`},{name:"社会科学导论",href:`${base}social-science/`},{name:"历史",href:`${base}history/`}]},
  {name:"工程学",items:[{name:"工程基础",href:`${base}engineering/topics/foundations/`},{name:"电子与电气工程",href:`${base}engineering/topics/electrical/`},{name:"机械工程",href:`${base}engineering/topics/mechanical/`}]},
  {name:"语言",items:[{name:"语言学",href:`${base}language/topics/linguistics/`},{name:"汉语",href:`${base}language/topics/chinese/`},{name:"英语",href:`${base}language/topics/english/`}]},
- {name:"文学",items:[{name:"写作",href:`${base}literature/topics/writing/`},{name:"文学理论",href:`${base}literature/topics/theory/`},{name:"中国文学",href:`${base}literature/topics/chinese/`},{name:"世界文学",href:`${base}literature/topics/world/`}]}
+ {name:"文学",items:[{name:"写作",href:`${base}literature/topics/writing/`},{name:"文学理论",href:`${base}literature/topics/theory/`},{name:"中外文学",href:`${base}literature/topics/world/`}]}
 ];
 
 function MenuItems({category,onSelect}:{category:Category;onSelect?:()=>void}){
