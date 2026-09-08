@@ -7,4 +7,9 @@
 .curriculum-grid p{margin:0;color:var(--muted)}
 .curriculum-grid p+p{margin-top:9px;color:#34383d}
 .curriculum-source{display:inline-block;margin-top:18px;color:#2457a7;font-size:13px}
-@media(max-width:700px){.curriculum-grid{grid-template-columns:1fr}.curriculum-grid article{padding:19px 18px 18px 52px}.curriculum-grid article>span{left:17px;top:20px}}
+.sidebar-curriculum{margin:3px 0 10px 8px;padding:4px 0 4px 12px;border-left:1px solid #d7d9d6}
+.sidebar .sidebar-curriculum a{display:flex;gap:8px;padding:4px 8px;margin:0;color:#697078;font-size:12px;line-height:1.45}
+.sidebar .sidebar-curriculum a:hover{color:#202124;background:transparent}
+.sidebar-curriculum span{flex:0 0 20px;color:#9a9fa5;font:10px/1.75 ui-monospace,SFMono-Regular,Menlo,monospace}
+.curriculum-grid article{scroll-margin-top:90px}
+@media(max-width:700px){.curriculum-grid{grid-template-columns:1fr}.curriculum-grid article{padding:19px 18px 18px 52px}.curriculum-grid article>span{left:17px;top:20px}.sidebar-curriculum{margin-bottom:12px}.curriculum-grid article{scroll-margin-top:76px}}
