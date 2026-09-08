@@ -30,7 +30,6 @@ export default function PlatformHome(){
      <div className="subject-menu-panel"><MenuItems category={category} onSelect={()=>setOpenCategory(null)}/></div>
     </div>)}
     <a className="platform-simple-link" href="#about" onClick={()=>setOpenCategory(null)}>关于</a>
-    <a className="platform-simple-link" href="https://github.com/ming1024yue/finance-self-taught/issues" target="_blank" rel="noreferrer" onClick={()=>setOpenCategory(null)}>共建</a>
    </nav>
    {active&&<div className="mobile-subject-panel"><strong>{active.name}</strong><MenuItems category={active} onSelect={()=>setOpenCategory(null)}/></div>}
   </header>
@@ -51,7 +50,6 @@ export default function PlatformHome(){
    </section>
    <section className="platform-contact">
     <small>CONTACT</small>
-    <h2>联系我们</h2>
     <p>如果你有建议、想推荐优质资源，或希望参与共建，欢迎发送邮件至 <a href="mailto:mingyueoct24@gmail.com">mingyueoct24@gmail.com</a>。</p>
    </section>
   </main>
