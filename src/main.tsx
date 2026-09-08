@@ -18,6 +18,7 @@ import{language}from"./languageCatalog";
 import{literature}from"./literatureCatalog";
 import{preserveSidebarScroll}from"./sidebarScroll";
 import{enableThemeInteraction}from"./themeInteraction";
+import{enableAnalytics}from"./analytics";
 import"./styles.css";import"./tools.css";import"./plan.css";import"./books.css";import"./mobile.css";import"./platform.css";import"./knowledge.css";import"./graph-interaction.css";import"./ollivere-theme.css";import"./comments.css";
 import"./subject-menu.css";
 
@@ -33,3 +34,4 @@ const page=genericPage??(mathTopic==="books"?<MathBooksPage/>:mathTopic?<MathTop
 const discussionKey=subject?`${subject.slug}/${subjectTopic??"home"}`:mathTopic?`math/${mathTopic}`:path.match(/^\/math\/?$/)?"math/home":financeTopic?`finance/${financeTopic}`:path.match(/^\/finance\/?$/)?"finance/home":null;
 createRoot(document.getElementById("root")!).render(<>{page}{discussionKey&&<div className="learning-comments"><Comments discussionKey={discussionKey}/></div>}</>);
 preserveSidebarScroll();enableThemeInteraction();
+enableAnalytics();
