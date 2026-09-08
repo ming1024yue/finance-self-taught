@@ -4,7 +4,7 @@ type AnalyticsWindow=Window&{
 };
 
 export function enableAnalytics(){
- const measurementId=import.meta.env.VITE_GA_MEASUREMENT_ID?.trim();
+ const measurementId=import.meta.env.VITE_GA_MEASUREMENT_ID?.trim()||"G-PTD12HXEYQ";
  if(!import.meta.env.PROD||!measurementId||!/^G-[A-Z0-9]+$/i.test(measurementId))return;
  const analyticsWindow=window as AnalyticsWindow;
  analyticsWindow.dataLayer=analyticsWindow.dataLayer||[];
