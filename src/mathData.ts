@@ -6,7 +6,7 @@ export const mathGroups=[
  ["开始之前",[["intro","本站目的"],["how","如何使用本站"],["plan","学习规划"]]],
  ["起点",[["tools","学习工具"],["foundations","数学基础"],["proofs","证明与数学语言"]]],
  ["大学核心",[["calculus","微积分"],["linear-algebra","线性代数"],["probability","概率论"],["statistics","统计学"],["differential-equations","微分方程"]]],
- ["进阶理论",[["discrete","离散数学"],["real-analysis","实分析"],["abstract-algebra","抽象代数"]]],
+ ["进阶理论",[["discrete","离散数学"],["real-analysis","实分析"],["abstract-algebra","抽象代数"],["cryptography","密码学"]]],
  ["应用与实践",[["optimization","优化"],["numerical","数值计算"],["modeling","数学建模"],["projects","项目与进阶方向"],["books","书单与资源"]]]
 ] as const;
 
@@ -61,6 +61,11 @@ export const mathTopics:Record<string,MathTopic>={
   R("Abstract Algebra: Theory and Applications","https://judsonbooks.org/abstract-algebra-theory-and-applications/","入门","开放教材","线性代数与证明基础","开放教材，用大量例子和练习引入群、环、域及应用。"),
   R("MIT Algebra I Student Notes","https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/","进阶","开放讲义","证明基础与线性代数","MIT 18.701 学生讲义，系统覆盖群作用、线性群和表示的起点。"),
   R("MIT 18.703 Modern Algebra","https://ocw.mit.edu/courses/18-703-modern-algebra-spring-2013/","高级","公开课","群论、线性代数与证明能力","更深入学习群、环、模、域扩张和 Galois 理论。")
+ ]},
+ cryptography:{title:"密码学",intro:"用概率、数论、代数和复杂性理论定义并证明信息系统的安全性。",resources:[
+  R("The Joy of Cryptography","https://joyofcryptography.com/","入门","开放教材","离散数学、概率与证明基础","面向高年级本科生的开放教材，从一次一密进入可证明安全、对称加密、公钥密码和零知识证明。"),
+  R("Stanford CS255: Introduction to Cryptography","https://crypto.stanford.edu/~dabo/courses/cs255_winter25/","进阶","公开课","概率、模运算、证明与基础编程","系统学习加密、消息完整性、数字签名、认证、密钥管理和零知识协议，并提供作业与编程项目。"),
+  R("MIT 18.783 Elliptic Curves","https://ocw.mit.edu/courses/18-783-elliptic-curves-fall-2025/","高级","公开课","抽象代数、数论与算法","从有限域上的椭圆曲线、群结构和计算方法进入椭圆曲线密码学所需的数学理论。")
  ]},
  optimization:{title:"优化",intro:"在约束下寻找最佳决策，连接数学、机器学习、经济学与工程。",resources:[
   R("Convex Optimization — Boyd & Vandenberghe","https://web.stanford.edu/~boyd/cvxbook/","入门","开放教材","微积分与线性代数","Stanford 官方免费教材，以几何直觉和应用建立凸优化框架。"),
