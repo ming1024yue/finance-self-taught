@@ -15,7 +15,7 @@ import{psychology}from"./psychologyCatalog";
 import{socialScience,history}from"./humanitiesCatalog";
 import{chemistry}from"./newSubjectsCatalog";
 import{engineeringTracks}from"./engineeringTracks";
-import{language}from"./languageCatalog";
+import{languageTracks}from"./languageCatalog";
 import{literature}from"./literatureCatalog";
 import{preserveSidebarScroll}from"./sidebarScroll";
 import{enableThemeInteraction}from"./themeInteraction";
@@ -31,9 +31,14 @@ if(legacyEngineering){
  path=`/engineering/${legacyEngineering}/`;
  window.history.replaceState(null,"",`${base}${path}`);
 }
+const legacyLanguage=path.match(/^\/language\/topics\/(linguistics|chinese|english)\/?$/)?.[1];
+if(legacyLanguage||/^\/language\/?$/.test(path)){
+ path=`/language/${legacyLanguage??"linguistics"}/`;
+ window.history.replaceState(null,"",`${base}${path}`);
+}
 const financeTopic=path.match(/^\/(?:finance\/)?topics\/([^/]+)/)?.[1];
 const mathTopic=path.match(/^\/math\/topics\/([^/]+)/)?.[1];
-const subjects=[...engineeringTracks,physics,computerScience,biology,psychology,socialScience,history,chemistry,language,literature];
+const subjects=[...engineeringTracks,...languageTracks,physics,computerScience,biology,psychology,socialScience,history,chemistry,literature];
 const subject=subjects.find(item=>path.match(new RegExp(`^/${item.slug}(?:/|$)`)));
 const matchedSubjectTopic=subject?path.match(new RegExp(`^/${subject.slug}/topics/([^/]+)`))?.[1]:undefined;
 const subjectTopic=subject?.slug==="literature"&&matchedSubjectTopic==="chinese"?"world":matchedSubjectTopic;

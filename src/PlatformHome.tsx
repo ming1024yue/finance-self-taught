@@ -9,7 +9,7 @@ const categories:Category[]=[
  {name:"自然科学",items:[{name:"物理",href:`${base}physics/`},{name:"化学",href:`${base}chemistry/`},{name:"生物",href:`${base}biology/`}]},
  {name:"社会科学",items:[{name:"金融",href:`${base}finance/`},{name:"心理学",href:`${base}psychology/`},{name:"社会科学导论",href:`${base}social-science/`},{name:"历史",href:`${base}history/`}]},
  {name:"工程学",items:[{name:"电子与电气工程",href:`${base}engineering/electrical/`},{name:"机械工程",href:`${base}engineering/mechanical/`},{name:"计算机工程",href:`${base}engineering/computer/`},{name:"航空航天工程",href:`${base}engineering/aerospace/`},{name:"控制与系统工程",href:`${base}engineering/systems/`},{name:"材料工程",href:`${base}engineering/materials/`}]},
- {name:"语言",items:[{name:"语言学",href:`${base}language/topics/linguistics/`},{name:"汉语",href:`${base}language/topics/chinese/`},{name:"英语",href:`${base}language/topics/english/`}]},
+ {name:"语言",items:[{name:"语言学",href:`${base}language/linguistics/`},{name:"汉语",href:`${base}language/chinese/`},{name:"英语",href:`${base}language/english/`}]},
  {name:"文学",items:[{name:"写作",href:`${base}literature/topics/writing/`},{name:"文学理论",href:`${base}literature/topics/theory/`},{name:"中外文学",href:`${base}literature/topics/world/`}]}
 ];
 
