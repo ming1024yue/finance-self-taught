@@ -1,5 +1,5 @@
 type AnalyticsWindow=Window&{
- dataLayer:unknown[][];
+ dataLayer:unknown[];
  gtag:(...args:unknown[])=>void;
 };
 
@@ -8,7 +8,9 @@ export function enableAnalytics(){
  if(!import.meta.env.PROD||!measurementId||!/^G-[A-Z0-9]+$/i.test(measurementId))return;
  const analyticsWindow=window as AnalyticsWindow;
  analyticsWindow.dataLayer=analyticsWindow.dataLayer||[];
- analyticsWindow.gtag=(...args:unknown[])=>{analyticsWindow.dataLayer.push(args)};
+ // Google tag expects an Arguments object here, matching its official snippet.
+ // eslint-disable-next-line prefer-rest-params
+ analyticsWindow.gtag=function gtag(){analyticsWindow.dataLayer.push(arguments)};
  analyticsWindow.gtag("js",new Date());
  analyticsWindow.gtag("config",measurementId);
  const script=document.createElement("script");
