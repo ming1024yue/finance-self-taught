@@ -1,7 +1,7 @@
 import type {SubjectConfig} from "./subjectTypes";
 const b=import.meta.env.BASE_URL,u=(p:string)=>b+p.replace(/^\//,"");
 const mark=(kind:string)=>kind.includes("教材")?"book":kind.includes("讲义")||kind.includes("项目")?"paper":"course";
-type Portal=[string,string,string,string];
+type Portal=readonly [string,string,string,string];
 function TopicCurriculum({curriculum}:{curriculum:NonNullable<SubjectConfig["topics"][string]["curriculum"]>}){return <section className="topic-curriculum"><h2>核心课程地图</h2><p>{curriculum.basis}</p><div className="curriculum-grid">{curriculum.stages.map((stage,index)=><article id={`curriculum-${index+1}`} key={stage.title}><span>{String(index+1).padStart(2,"0")}</span><h3>{stage.title}</h3><p>{stage.courses}</p><p><b>实践：</b>{stage.practice}</p></article>)}</div><a className="curriculum-source" href={curriculum.reference[1]} target="_blank" rel="noreferrer">参考培养方案：{curriculum.reference[0]} ↗</a></section>}
 const chinesePortals:Partial<Record<string,Portal[]>>={
  biology:[["北大","北京大学：生物学概念与途径","https://www.icourse163.org/course/PKU-1002533002","从生物学史上的关键概念、实验与研究方法理解学科如何发展。"]],
