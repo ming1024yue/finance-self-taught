@@ -6,7 +6,8 @@ function TopicCurriculum({curriculum}:{curriculum:NonNullable<SubjectConfig["top
 const chinesePortals:Partial<Record<string,Portal[]>>={
  biology:[["北大","北京大学：生物学概念与途径","https://www.icourse163.org/course/PKU-1002533002","从生物学史上的关键概念、实验与研究方法理解学科如何发展。"]],
  psychology:[["北大","北京大学：发展心理学","https://www.icourse163.org/course/PKU-1206624828","沿毕生发展主线学习生理、认知、人格与社会性变化。"]],
- "social-science":[["北大","北京大学：社会调查与研究方法","https://www.icourse163.org/learn/PKU-1002531002","从观察、测量到分析，建立适用于多种社会问题的研究方法框架。"],["北大","北京大学：政治学概论","https://www.icourse163.org/course/PKU-1002578003","系统理解政治概念、现代国家、制度与政治学研究方法。"]],
+ "political-science":[["北大","北京大学：政治学概论","https://www.icourse163.org/course/PKU-1002578003","系统理解政治概念、现代国家、制度与政治学研究方法。"]],
+ management:[["浙大","浙江大学：管理概论","https://www.icourse163.org/course/ZJU-19001","围绕管理者、组织、科学决策、计划、领导与控制建立系统框架。"]],
  history:[["复旦","复旦大学：《资治通鉴》导读","https://www.icourse163.org/course/fudan-1205930801","以经典史书训练语境化、史料辨析和思想史阅读方法。"]],
  chemistry:[["南大","南京大学：化学原理与测量","https://www.icourse163.org/course/NJU-1485609161","把物理化学、仪器分析、实验操作和数据处理连接起来。"]],
  engineering:[["清华","清华大学：电路原理","https://www.xuetangx.com/course/THU08061000294","从基础分析方法进入元器件、电路模型及工程应用。"],["清华","清华大学：自动控制理论","https://www.xuetangx.com/course/THU08081000909/","系统学习状态空间、稳定性、反馈与最优控制。"]],

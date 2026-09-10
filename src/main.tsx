@@ -12,7 +12,8 @@ import{SubjectBooksPage,SubjectHome,SubjectTopicPage}from"./SubjectPages";
 import{physics,computerScience}from"./subjectCatalog";
 import{biology}from"./biologyCatalog";
 import{psychology}from"./psychologyCatalog";
-import{socialScience,history}from"./humanitiesCatalog";
+import{history}from"./humanitiesCatalog";
+import{management,politicalScience}from"./socialDisciplinesCatalog";
 import{chemistry}from"./newSubjectsCatalog";
 import{engineeringTracks}from"./engineeringTracks";
 import{languageTracks}from"./languageCatalog";
@@ -38,7 +39,7 @@ if(legacyLanguage||/^\/language\/?$/.test(path)){
 }
 const financeTopic=path.match(/^\/(?:finance\/)?topics\/([^/]+)/)?.[1];
 const mathTopic=path.match(/^\/math\/topics\/([^/]+)/)?.[1];
-const subjects=[...engineeringTracks,...languageTracks,physics,computerScience,biology,psychology,socialScience,history,chemistry,literature];
+const subjects=[...engineeringTracks,...languageTracks,physics,computerScience,biology,psychology,politicalScience,management,history,chemistry,literature];
 const subject=subjects.find(item=>path.match(new RegExp(`^/${item.slug}(?:/|$)`)));
 const matchedSubjectTopic=subject?path.match(new RegExp(`^/${subject.slug}/topics/([^/]+)`))?.[1]:undefined;
 const subjectTopic=subject?.slug==="literature"&&matchedSubjectTopic==="chinese"?"world":matchedSubjectTopic;
