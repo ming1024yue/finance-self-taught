@@ -1,6 +1,6 @@
 import {useEffect,useRef} from "react";
 
-const repo="ming1024yue/finance-self-taught";
+const repo="ming1024yue/self-taught-fun";
 const repoId="R_kgDOUOOwiQ";
 const categoryId=import.meta.env.VITE_GISCUS_CATEGORY_ID?.trim()||"DIC_kwDOUOOwic4DFG11";
 
