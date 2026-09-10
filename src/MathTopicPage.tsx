@@ -3,6 +3,8 @@ import {MathHeader,MathSide} from "./MathHome";
 const tools=[
  ["可视化与直觉",[["Desmos","https://www.desmos.com/calculator","函数、方程和参数变化的交互图像"],["GeoGebra","https://www.geogebra.org/","几何、代数、微积分和三维可视化"]]],
  ["符号与数值计算",[["Wolfram Alpha","https://www.wolframalpha.com/","核对计算、探索例子；不要直接抄写结果"],["SageMath","https://www.sagemath.org/","免费的开源数学计算系统"],["SymPy","https://www.sympy.org/","在 Python 中进行符号计算"]]],
+ ["概率、优化与建模",[["SciPy","https://scipy.org/","进行优化、积分、微分方程和统计计算"],["CVXPY","https://www.cvxpy.org/","用 Python 表达和求解凸优化问题"],["NetworkX","https://networkx.org/","构建、分析和可视化复杂网络"]]],
+ ["严格证明与形式化",[["Lean","https://lean-lang.org/","用形式化语言编写和验证数学证明"],["Theorem Proving in Lean 4","https://leanprover.github.io/theorem_proving_in_lean4/","免费学习 Lean 的逻辑、类型论与证明方法"]]],
  ["书写与研究",[["Overleaf","https://www.overleaf.com/","在线编写 LaTeX 数学文档"],["LaTeX Project","https://www.latex-project.org/","规范排版公式、证明和报告"],["Jupyter","https://jupyter.org/","把推导、代码、图表和说明放在同一份笔记中"]]]
 ] as const;
 const mark=(kind:string)=>kind.includes("教材")?"book":kind.includes("讲义")||kind.includes("项目")?"paper":"course";

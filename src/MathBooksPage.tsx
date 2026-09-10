@@ -7,7 +7,11 @@ const books=[
  ["OpenIntro Statistics","https://www.openintro.org/book/os/","统计学 · 入门","使用真实数据和练习介绍描述统计、抽样与统计推断。"],
  ["Basic Analysis — Jiří Lebl","https://www.jirka.org/ra/","实分析 · 进阶","两卷开放教材，从实数、序列与连续进入度量空间和多变量分析。"],
  ["Abstract Algebra: Theory and Applications","https://judsonbooks.org/abstract-algebra-theory-and-applications/","抽象代数 · 进阶","开放教材，覆盖群、环、域及密码学等应用。"],
- ["Convex Optimization","https://web.stanford.edu/~boyd/cvxbook/","优化 · 进阶","Boyd 与 Vandenberghe 的经典教材，由 Stanford 官方免费提供。"]
+ ["Convex Optimization","https://web.stanford.edu/~boyd/cvxbook/","优化 · 进阶","Boyd 与 Vandenberghe 的经典教材，由 Stanford 官方免费提供。"],
+ ["Topology Without Tears","https://www.topologywithouttears.net/","拓扑 · 进阶","从点集拓扑进入紧致性、连通性与度量空间，配有练习和视频。"],
+ ["Information Theory, Inference, and Learning Algorithms","https://www.inference.org.uk/itprnn/book.pdf","信息论 · 进阶","把信息、编码、贝叶斯推断和机器学习放在同一框架中。"],
+ ["Network Science","https://networksciencebook.com/","网络科学 · 入门至进阶","免费在线教材，用真实网络解释连接结构、传播和鲁棒性。"],
+ ["Mathematics for Machine Learning","https://mml-book.github.io/","机器学习数学 · 入门","连接线性代数、概率、优化与典型机器学习模型。"]
 ];
 const portals=[
  ["清华","清华大学：微积分","https://v1-www.xuetangx.com/courses/course-v1%3ATsinghuaX%2BAP000005X%2B2016_T2/about","从极限、导数与积分进入级数和常微分方程，适合大学数学起步。"],

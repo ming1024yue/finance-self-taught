@@ -6,8 +6,9 @@ export const mathGroups=[
  ["开始之前",[["intro","本站目的"],["how","如何使用本站"],["plan","学习规划"]]],
  ["起点",[["tools","学习工具"],["foundations","数学基础"],["proofs","证明与数学语言"]]],
  ["大学核心",[["calculus","微积分"],["linear-algebra","线性代数"],["probability","概率论"],["statistics","统计学"],["differential-equations","微分方程"]]],
- ["进阶理论",[["discrete","离散数学"],["real-analysis","实分析"],["abstract-algebra","抽象代数"],["cryptography","密码学"]]],
- ["应用与实践",[["optimization","优化"],["numerical","数值计算"],["modeling","数学建模"],["projects","项目与进阶方向"],["books","书单与资源"]]]
+ ["结构与理论",[["discrete","离散数学"],["real-analysis","实分析"],["complex-analysis","复分析"],["abstract-algebra","抽象代数"],["number-theory","数论"],["topology-geometry","拓扑与几何"],["cryptography","密码学"]]],
+ ["随机、信息与计算",[["stochastic-processes","随机过程"],["information-theory","信息论与编码"],["optimization","优化"],["numerical","数值计算"],["pde","偏微分方程"]]],
+ ["现代应用与交叉",[["dynamical-systems","动力系统与混沌"],["network-science","网络科学"],["math-ml","机器学习的数学"],["modeling","数学建模"],["projects","项目与进阶方向"],["books","书单与资源"]]]
 ] as const;
 
 export const mathTopics:Record<string,MathTopic>={
@@ -62,6 +63,21 @@ export const mathTopics:Record<string,MathTopic>={
   R("MIT Algebra I Student Notes","https://ocw.mit.edu/courses/res-18-011-algebra-i-student-notes-fall-2021/","进阶","开放讲义","证明基础与线性代数","MIT 18.701 学生讲义，系统覆盖群作用、线性群和表示的起点。"),
   R("MIT 18.703 Modern Algebra","https://ocw.mit.edu/courses/18-703-modern-algebra-spring-2013/","高级","公开课","群论、线性代数与证明能力","更深入学习群、环、模、域扩张和 Galois 理论。")
  ]},
+ "complex-analysis":{title:"复分析",intro:"研究复可微函数、共形映射和留数，把分析、几何、数论与物理连接起来。",resources:[
+  R("Complex Analysis — Elias Wegert","https://complex-analysis.com/","入门","开放教材","多变量微积分与证明基础","免费交互教材用相图和可视化建立复函数、解析性与映射的几何直觉。"),
+  R("MIT 18.04 Complex Variables with Applications","https://ocw.mit.edu/courses/18-04-complex-variables-with-applications-fall-1999/","进阶","公开课","多变量微积分与微分方程","通过 Cauchy 定理、级数、留数、共形映射和应用系统进入复分析。"),
+  R("MIT 18.112 Functions of a Complex Variable","https://ocw.mit.edu/courses/18-112-functions-of-a-complex-variable-fall-2008/","高级","公开课","实分析与成熟的证明能力","从严格分析角度学习解析函数、调和函数、亚纯函数和 Riemann 映射。")
+ ]},
+ "number-theory":{title:"数论",intro:"研究整数、素数、同余和算术结构，并连接密码学、代数几何与理论计算机科学。",resources:[
+  R("Elementary Number Theory — William Stein","https://wstein.org/ent/","入门","开放教材","高中代数与基础证明","免费教材从整除、同余和二次剩余进入密码学与计算实验。"),
+  R("MIT 18.781 Theory of Numbers","https://ocw.mit.edu/courses/18-781-theory-of-numbers-spring-2012/","进阶","公开课","证明、离散数学与抽象代数基础","系统学习素数、二次互反、连分数、丢番图方程和解析方法。"),
+  R("MIT 18.785 Number Theory I","https://ocw.mit.edu/courses/18-785-number-theory-i-fall-2021/","高级","公开课","抽象代数、实分析与复分析","进入代数数论、局部域、zeta 函数和现代算术工具。")
+ ]},
+ "topology-geometry":{title:"拓扑与几何",intro:"研究空间在连续变形下保持的结构，并从曲率、流形和不变量理解形状。",resources:[
+  R("Topology Without Tears","https://www.topologywithouttears.net/","入门","开放教材","集合、函数与证明基础","免费的点集拓扑教材，配有大量练习、视频和自测材料。"),
+  R("MIT 18.901 Introduction to Topology","https://ocw.mit.edu/courses/18-901-introduction-to-topology-fall-2004/","进阶","公开课","实分析与成熟的证明能力","学习拓扑空间、连续性、紧致性、连通性、分离公理和基本群。"),
+  R("MIT 18.950 Differential Geometry","https://ocw.mit.edu/courses/18-950-differential-geometry-fall-2008/","高级","公开课","多变量微积分、线性代数与实分析","从曲线曲面进入曲率、测地线、Gauss–Bonnet 定理和流形思想。")
+ ]},
  cryptography:{title:"密码学",intro:"用概率、数论、代数和复杂性理论定义并证明信息系统的安全性。",resources:[
   R("The Joy of Cryptography","https://joyofcryptography.com/","入门","开放教材","离散数学、概率与证明基础","面向高年级本科生的开放教材，从一次一密进入可证明安全、对称加密、公钥密码和零知识证明。"),
   R("Stanford CS255: Introduction to Cryptography","https://crypto.stanford.edu/~dabo/courses/cs255_winter25/","进阶","公开课","概率、模运算、证明与基础编程","系统学习加密、消息完整性、数字签名、认证、密钥管理和零知识协议，并提供作业与编程项目。"),
@@ -76,6 +92,36 @@ export const mathTopics:Record<string,MathTopic>={
   R("Fundamentals of Numerical Computation","https://fncbook.com/","入门","开放教材","微积分、线性代数与基础编程","可在线阅读并配有 Julia、MATLAB 和 Python 版本代码。"),
   R("MIT 18.330 Introduction to Numerical Analysis","https://ocw.mit.edu/courses/18-330-introduction-to-numerical-analysis-spring-2012/","进阶","公开课","微积分、线性代数与编程","学习插值、数值积分、线性系统、ODE 与误差分析。"),
   R("MIT 18.335J Introduction to Numerical Methods","https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/","高级","公开课","数值分析与成熟编程能力","深入大型线性系统、特征问题、迭代法与高性能计算。")
+ ]},
+ "stochastic-processes":{title:"随机过程",intro:"研究随时间演化的随机系统，为金融、通信、排队、生态和机器学习提供模型。",resources:[
+  R("Introduction to Probability, Statistics, and Random Processes","https://www.probabilitycourse.com/","入门","开放教材","微积分与基础概率","免费教材从随机变量逐步进入随机过程、Markov 链和统计推断。"),
+  R("MIT 18.445 Introduction to Stochastic Processes","https://ocw.mit.edu/courses/18-445-introduction-to-stochastic-processes-spring-2015/","进阶","公开课","概率论、条件期望与线性代数","学习 Markov 链、Poisson 过程、鞅、随机游走和分支过程。"),
+  R("MIT 6.262 Discrete Stochastic Processes","https://ocw.mit.edu/courses/6-262-discrete-stochastic-processes-spring-2011/","高级","公开课","概率论、证明与微积分","深入更新过程、可数状态 Markov 链、随机过程极限和排队模型。")
+ ]},
+ "information-theory":{title:"信息论与编码",intro:"用熵和互信息刻画信息、压缩与通信的极限，并理解可靠编码的数学基础。",resources:[
+  R("Information Theory, Inference, and Learning Algorithms","https://www.inference.org.uk/itprnn/book.pdf","入门","开放教材","概率、微积分与线性代数","David MacKay 免费教材用压缩、纠错码和学习问题建立信息论直觉。"),
+  R("Stanford EE376A Information Theory","https://web.stanford.edu/class/ee376a/","进阶","公开课","概率论与证明基础","系统学习熵、典型集、信源编码、信道容量和有损压缩。"),
+  R("MIT 6.441 Information Theory","https://ocw.mit.edu/courses/6-441-information-theory-spring-2016/","高级","公开课","概率论、随机过程与证明能力","从二元假设检验进入有限码长、信道编码与现代信息论。")
+ ]},
+ pde:{title:"偏微分方程",intro:"用方程描述场、波、扩散和连续介质，并结合分析与数值方法研究解。",resources:[
+  R("MIT 18.303 Linear Partial Differential Equations","https://ocw.mit.edu/courses/18-303-linear-partial-differential-equations-analysis-and-numerics-fall-2014/","入门","公开课","微分方程、线性代数与多变量微积分","连接 Poisson、热和波方程的分析、有限差分、有限元与谱方法。"),
+  R("MIT 18.152 Introduction to Partial Differential Equations","https://ocw.mit.edu/courses/18-152-introduction-to-partial-differential-equations-fall-2011/","进阶","公开课","实分析、复分析与常微分方程","学习一阶方程、椭圆型、抛物型和双曲型 PDE 的基本理论。"),
+  R("MIT 18.155 Differential Analysis","https://ocw.mit.edu/courses/18-155-differential-analysis-fall-2004/","高级","公开课","实分析、泛函分析与 PDE 基础","进入分布、Fourier 分析、Sobolev 空间和线性偏微分算子。")
+ ]},
+ "dynamical-systems":{title:"动力系统与混沌",intro:"研究系统如何随时间演化，理解稳定性、分岔、吸引子、混沌与复杂行为。",resources:[
+  R("MIT 12.006J Nonlinear Dynamics: Chaos","https://ocw.mit.edu/courses/12-006j-nonlinear-dynamics-chaos-fall-2022/","入门","公开课","微分方程与线性代数","用现代讲义、Python 实验和项目学习相图、分岔、吸引子与 Lyapunov 指数。"),
+  R("MIT 18.353J Nonlinear Dynamics I","https://ocw.mit.edu/courses/18-353j-nonlinear-dynamics-i-chaos-fall-2012/","进阶","公开课","常微分方程、线性代数与数值计算","通过振子、映射、Poincaré 截面和计算实验建立非线性系统方法。"),
+  R("MIT 18.385J Nonlinear Dynamics and Chaos","https://ocw.mit.edu/courses/18-385j-nonlinear-dynamics-and-chaos-fall-2014/","高级","公开课","微分方程、分析与成熟计算能力","深入 Hopf 分岔、Hamilton 系统、遍历性、KAM 理论和普适性。")
+ ]},
+ "network-science":{title:"网络科学",intro:"用图、概率和动力系统研究连接结构，以及传播、鲁棒性和集体现象。",resources:[
+  R("Network Science — Albert-László Barabási","https://networksciencebook.com/","入门","开放教材","概率、线性代数与基础编程","免费在线教材从随机网络、无标度结构进入社区、传播和网络鲁棒性。"),
+  R("MIT 6.268 Network Science and Models","https://ocw.mit.edu/courses/6-268-network-science-and-models-fall-2014/","进阶","公开课","概率、图论与微积分","研究随机图、网络形成、级联、流行病传播、学习和社会网络。"),
+  R("Santa Fe Institute Complexity Explorer","https://www.complexityexplorer.org/courses","高级","课程库","概率、动力系统与编程","通过复杂系统课程把网络、涌现、信息和多主体模型连接起来。")
+ ]},
+ "math-ml":{title:"机器学习的数学",intro:"从线性代数、概率、优化与统计学习理论理解模型为何有效、何时失效。",resources:[
+  R("Mathematics for Machine Learning","https://mml-book.github.io/","入门","开放教材","微积分、线性代数与概率基础","作者免费提供教材和笔记本，把数学概念直接连接到回归、PCA、密度估计和分类。"),
+  R("MIT 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning","https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/","进阶","公开课","线性代数、概率与基础编程","用矩阵分解、低秩近似、优化和神经网络建立现代数据方法的数学框架。"),
+  R("Caltech Learning From Data","https://work.caltech.edu/telecourse.html","高级","公开课","概率、线性代数、微积分与证明能力","从泛化、VC 维、偏差方差、正则化和验证理解统计学习理论。")
  ]},
  modeling:{title:"数学建模",intro:"把现实问题转化为变量、假设、方程和可以检验的结论。",resources:[
   R("MIT 18.085 Computational Science and Engineering I","https://ocw.mit.edu/courses/18-085-computational-science-and-engineering-i-fall-2008/","入门","公开课","微积分与线性代数","从网络、平衡方程和微分方程出发连接模型与计算。"),
