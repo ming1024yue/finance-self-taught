@@ -6,12 +6,19 @@ const books=[
  ["OpenStax Financial Accounting","https://openstax.org/details/books/principles-financial-accounting","会计 · 入门","从会计等式、交易记录到三张报表，配有例题与练习。"],
  ["Causal Inference: The Mixtape","https://mixtape.scunning.com/","计量 · 进阶","以直觉、案例和代码介绍因果推断方法。"],
  ["Python Data Science Handbook","https://jakevdp.github.io/PythonDataScienceHandbook/","数据分析 · 入门","系统介绍 NumPy、Pandas、可视化与机器学习工具。"],
+ ["An Introduction to Statistical Learning","https://www.statlearning.com/","机器学习 · 入门","作者官网免费提供教材，并配有课程视频与 R / Python 实验。"],
+ ["Forecasting: Principles and Practice","https://otexts.com/fpp3/","时间序列 · 进阶","以可运行案例讲解预测、评估、回归、指数平滑和时间序列模型。"],
+ ["Bitcoin and Cryptocurrency Technologies","https://bitcoinbook.cs.princeton.edu/","数字资产 · 进阶","Princeton 作者开放教材，从密码学、共识和激励机制理解区块链。"],
  ["Asset Pricing — John Cochrane","https://www.johnhcochrane.com/asset-pricing","资产定价 · 高级","以随机贴现因子统一现代资产定价理论与实证。"]
 ];
 const portals=[
  ["复旦","复旦大学：货币经济学","https://www.icourse163.org/course/FUDAN-1206694808","结合中国与主要经济体的央行实践，系统讲解货币、经济活动与货币政策。"],
  ["MIT","MIT OpenCourseWare — Economics","https://ocw.mit.edu/search/?d=Economics","讲义、视频、习题、考试和答案非常完整。"],
  ["MIT Sloan","MIT Sloan Finance Courses","https://ocw.mit.edu/search/?d=Sloan%20School%20of%20Management&q=finance","查找公司金融、投资、会计和金融理论课程。"],
+ ["MIT Sloan","FinTech: Shaping the Financial World","https://ocw.mit.edu/courses/15-s08-fintech-shaping-the-financial-world-spring-2020/","覆盖人工智能、支付、信贷、开放 API、交易和保险科技。"],
+ ["MIT Sloan","Blockchain and Money","https://ocw.mit.edu/courses/15-s12-blockchain-and-money-fall-2018/","通过完整视频和讲义理解区块链的金融应用与政策问题。"],
+ ["MIT Sloan","Entrepreneurial Finance","https://ocw.mit.edu/courses/15-431-entrepreneurial-finance-spring-2011/","系统学习创业融资、风险投资、契约、估值和退出。"],
+ ["Georgia Tech","Machine Learning for Trading","https://quantsoftware.gatech.edu/Machine_Learning_for_Trading_Course","公开课程视频、讲义与代码连接机器学习、市场数据和策略评估。"],
  ["Yale","Open Yale Courses — Economics","https://oyc.yale.edu/economics","提供 Financial Markets、Financial Theory 和 Game Theory。"],
  ["Harvard","Harvard Free Online Courses","https://pll.harvard.edu/catalog/free","可筛选经济、商业、统计与数据科学课程。"],
  ["Stanford","Stanford Online Free Courses","https://online.stanford.edu/free-courses","适合补充统计、编程、数据科学与政策内容。"],
