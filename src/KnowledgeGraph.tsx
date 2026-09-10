@@ -12,7 +12,6 @@ const initialNodes:Node[]=[
  {id:"behavecon",label:"行为经济学",group:"交叉领域",x:.47,y:.72,size:7},
  {id:"neuroecon",label:"神经经济学",group:"交叉领域",x:.66,y:.67,size:6},
  {id:"compsocial",label:"计算社会科学",group:"交叉领域",x:.59,y:.79,size:7},
- {id:"digitalhumanities",label:"数字人文",group:"交叉领域",x:.36,y:.82,size:7},
  {id:"network",label:"网络科学",group:"交叉领域",x:.56,y:.51,size:7},
  {id:"econophysics",label:"经济物理",group:"交叉领域",x:.47,y:.32,size:6},
  {id:"quantumcomp",label:"量子计算",group:"交叉领域",x:.57,y:.19,size:7},
@@ -31,7 +30,6 @@ const edges=[
  ["psychology","behavecon"],["micro","behavecon"],["metrics","behavecon"],
  ["psychology","neuroecon"],["biology","neuroecon"],["micro","neuroecon"],["behavecon","neuroecon"],
  ["social","compsocial"],["data","compsocial"],["stats","compsocial"],["algo","compsocial"],
- ["history","digitalhumanities"],["social","digitalhumanities"],["data","digitalhumanities"],["cs","digitalhumanities"],
  ["stats","network"],["algo","network"],["complex","network"],["social","network"],["biology","network"],["compsocial","network"],
  ["physics","econophysics"],["stats","econophysics"],["macro","econophysics"],["complex","econophysics"],
  ["physics","quantumcomp"],["math","quantumcomp"],["cs","quantumcomp"],["algo","quantumcomp"],
@@ -43,11 +41,11 @@ const edges=[
  ["chemistry","physics"],["chemistry","biology"],["chemistry","biophysics"],["chemistry","compbio"],
  ["engineering","math"],["engineering","physics"],["engineering","cs"],["engineering","robot"],["engineering","complex"],["engineering","quantumcomp"],
  ["language","psychology"],["language","social"],["language","history"],["language","cogsci"],["language","hci"],["language","compsocial"],
- ["literature","language"],["literature","history"],["literature","social"],["literature","digitalhumanities"]
+ ["literature","language"],["literature","history"],["literature","social"]
 ];
 const descriptions:Record<string,string>={
  crypto:"数学 × 计算机 × 信息安全",blockchain:"计算机 × 密码学 × 分布式系统 × 经济激励",graphics:"计算机 × 数学 × 光学 × 视觉交互",ml:"数学 × 计算机 × 统计",metrics:"经济学 × 数学 × 统计",quant:"金融 × 统计 × 计算机",fineng:"金融 × 数学 × 计算机",complex:"数学 × 物理 × 生物 × 社会科学",robot:"计算机 × 物理",
- compbio:"生物 × 计算机 × 统计",biophysics:"生物 × 物理",cogsci:"心理学 × 生物 × 计算机",behavecon:"心理学 × 经济学",neuroecon:"神经科学 × 心理学 × 经济学",compsocial:"社会科学 × 计算机 × 统计",digitalhumanities:"历史人文 × 计算机",network:"数学 × 计算机 × 自然与社会系统",econophysics:"经济学 × 统计物理",quantumcomp:"物理 × 数学 × 计算机",psychometrics:"心理学 × 统计",mathbio:"数学 × 生物",epidemiology:"生物 × 统计 × 社会科学",hci:"计算机 × 心理学 × 社会科学",compneuro:"神经科学 × 数学 × 计算机"
+ compbio:"生物 × 计算机 × 统计",biophysics:"生物 × 物理",cogsci:"心理学 × 生物 × 计算机",behavecon:"心理学 × 经济学",neuroecon:"神经科学 × 心理学 × 经济学",compsocial:"社会科学 × 计算机 × 统计",network:"数学 × 计算机 × 自然与社会系统",econophysics:"经济学 × 统计物理",quantumcomp:"物理 × 数学 × 计算机",psychometrics:"心理学 × 统计",mathbio:"数学 × 生物",epidemiology:"生物 × 统计 × 社会科学",hci:"计算机 × 心理学 × 社会科学",compneuro:"神经科学 × 数学 × 计算机"
 };
 
 export default function KnowledgeGraph(){
