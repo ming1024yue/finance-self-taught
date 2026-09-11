@@ -5,12 +5,12 @@ const mark=(kind:string)=>kind.includes("教材")?"book":kind.includes("讲义")
 type Portal=readonly [string,string,string,string];
 function TopicCurriculum({curriculum}:{curriculum:NonNullable<SubjectConfig["topics"][string]["curriculum"]>}){return <section className="topic-curriculum"><h2>核心课程地图</h2><p>{curriculum.basis}</p><div className="curriculum-grid">{curriculum.stages.map((stage,index)=><article id={`curriculum-${index+1}`} key={stage.title}><span>{String(index+1).padStart(2,"0")}</span><h3>{stage.title}</h3><p>{stage.courses}</p><p><b>实践：</b>{stage.practice}</p></article>)}</div><a className="curriculum-source" href={curriculum.reference[1]} target="_blank" rel="noreferrer">参考培养方案：{curriculum.reference[0]} ↗</a></section>}
 const chinesePortals:Partial<Record<string,Portal[]>>={
- biology:[["北大","北京大学：生物学概念与途径","https://www.icourse163.org/course/PKU-1002533002","从生物学史上的关键概念、实验与研究方法理解学科如何发展。"]],
+ biology:[["北大","北京大学：生物学概念与途径","https://www.icourse163.org/course/PKU-1002533002","从生物学史上的关键概念、实验与研究方法理解学科如何发展。"],["北大","北京大学：生物化学实验","https://www.icourse163.org/course/PKU-1449775172","以本科主干实验理解定量分析、层析、电泳、酶学和免疫学技术。"]],
  psychology:[["北大","北京大学：发展心理学","https://www.icourse163.org/course/PKU-1206624828","沿毕生发展主线学习生理、认知、人格与社会性变化。"]],
  "political-science":[["北大","北京大学：政治学概论","https://www.icourse163.org/course/PKU-1002578003","系统理解政治概念、现代国家、制度与政治学研究方法。"]],
  management:[["浙大","浙江大学：管理概论","https://www.icourse163.org/course/ZJU-19001","围绕管理者、组织、科学决策、计划、领导与控制建立系统框架。"]],
  history:[["复旦","复旦大学：《资治通鉴》导读","https://www.icourse163.org/course/fudan-1205930801","以经典史书训练语境化、史料辨析和思想史阅读方法。"]],
- chemistry:[["南大","南京大学：化学原理与测量","https://www.icourse163.org/course/NJU-1485609161","把物理化学、仪器分析、实验操作和数据处理连接起来。"]],
+ chemistry:[["南大","南京大学：化学原理与测量","https://www.icourse163.org/course/NJU-1485609161","把物理化学、仪器分析、实验操作和数据处理连接起来。"],["南大","南京大学：物理化学","https://www.icourse163.org/course/NJU-1002580002","系统理解热力学、动力学、电化学和物质结构的定量基础。"]],
  engineering:[["清华","清华大学：电路原理","https://www.xuetangx.com/course/THU08061000294","从基础分析方法进入元器件、电路模型及工程应用。"],["清华","清华大学：自动控制理论","https://www.xuetangx.com/course/THU08081000909/","系统学习状态空间、稳定性、反馈与最优控制。"]],
  language:[["北大","北京大学：语言学概论","https://www.icourse163.org/course/PKU-1205727813","系统介绍语言的结构、演变、文字及其社会功能。"]],
  literature:[["复旦","复旦大学：中国现代文学名著选讲","https://www.icourse163.org/course/FUDAN-1205931801","通过代表作家的文本细读，理解现代文学的语言、叙事与历史语境。"]]

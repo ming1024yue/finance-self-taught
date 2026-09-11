@@ -19,13 +19,6 @@ const plans:Record<string,Record<string,PhaseUpdate>>={
   ai:{time:"按方向 6–10 个月",title:"或选择人工智能与智能系统方向",mode:"choice"},
   projects:{time:"从第二阶段持续",mode:"ongoing"}
  },
- biology:{
-  foundations:{time:"2–3 个月"},
-  molecular:{time:"5–7 个月"},
-  evolution:{time:"4–6 个月"},
-  bioinformatics:{time:"同步进行 3–5 个月",mode:"parallel"},
-  projects:{time:"从第二阶段持续",mode:"ongoing"}
- },
  psychology:{
   introduction:{time:"2–3 个月"},
   methods:{time:"同步进行 3–5 个月",title:"贯穿研究方法、统计与测量",mode:"parallel"},
@@ -55,13 +48,6 @@ const plans:Record<string,Record<string,PhaseUpdate>>={
   china:{time:"按区域 4–6 个月",title:"选择一个区域深化",mode:"choice"},
   global:{time:"同步进行 3–5 个月",mode:"parallel"},
   projects:{time:"从第一阶段持续",mode:"ongoing"}
- },
- chemistry:{
-  foundations:{time:"2–3 个月"},
-  general:{time:"4–6 个月"},
-  organic:{time:"6–8 个月"},
-  physical:{time:"6–8 个月"},
-  projects:{time:"按方向 4–6 个月",title:"选择应用方向并完成项目",mode:"choice"}
  },
  literature:{
   writing:{time:"2–3 个月"},

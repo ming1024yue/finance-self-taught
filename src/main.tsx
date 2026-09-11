@@ -14,7 +14,7 @@ import{biology}from"./biologyCatalog";
 import{psychology}from"./psychologyCatalog";
 import{history}from"./humanitiesCatalog";
 import{management,politicalScience}from"./socialDisciplinesCatalog";
-import{chemistry}from"./newSubjectsCatalog";
+import{chemistry}from"./chemistryCatalog";
 import{engineeringTracks}from"./engineeringTracks";
 import{languageTracks}from"./languageCatalog";
 import{literature}from"./literatureCatalog";
