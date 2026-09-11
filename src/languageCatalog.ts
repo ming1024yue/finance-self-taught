@@ -1,8 +1,13 @@
-import{r,type Resource,type SubjectConfig,type Topic}from"./subjectTypes";
+import{r,type Phase,type Resource,type SubjectConfig,type Topic}from"./subjectTypes";
 
 type Course=[string,string,string,Resource[]];
 type Track={slug:string;name:string;en:string;intro:string;caution:string;courses:Course[];tools:SubjectConfig["tools"];books:SubjectConfig["books"];portals:SubjectConfig["portals"]};
 const start=["开始之前",[["intro","本站目的"],["how","如何使用本站"],["plan","学习规划"]]] as const;
+const phaseSettings:Record<string,Record<string,{time:string;mode?:Phase["mode"];title?:string}>>={
+ linguistics:{foundations:{time:"2–3 个月"},sound:{time:"2–3 个月"},grammar:{time:"3–4 个月"},"meaning-change":{time:"3–4 个月"},computational:{time:"按方向 4–6 个月",mode:"choice",title:"选择计算语言学或其他专门方向"}},
+ chinese:{modern:{time:"2–3 个月"},grammar:{time:"2–3 个月"},classical:{time:"5–8 个月"},"history-dialects":{time:"按方向 4–6 个月",mode:"choice",title:"选择汉语史、音韵或方言方向"}},
+ english:{"sound-listening":{time:"2–4 周",title:"诊断水平并启动语音与听力"},"grammar-vocabulary":{time:"同步进行 12–20 个月",mode:"parallel"},reading:{time:"同步进行 12–20 个月",mode:"parallel"},communication:{time:"同步进行 12–20 个月",mode:"parallel"}}
+};
 
 const makeTrack=(track:Track):SubjectConfig=>{
  const topics:Record<string,Topic>={
@@ -11,12 +16,12 @@ const makeTrack=(track:Track):SubjectConfig=>{
   books:{title:"书单与资源",intro:"集中查看开放教材、大学官方课程和可靠语言资源。",resources:[]}
  };
  track.courses.forEach(([id,title,intro,resources])=>{topics[id]={title,intro,resources}});
- const phases=track.courses.map(([id,title,intro],index)=>({
-  time:index===0?"1–2 个月":"2–4 个月",title:`学习${title}`,goal:intro,
+ const phases:Phase[]=track.courses.map(([id,title,intro])=>{const setting=phaseSettings[track.slug]?.[id];return{
+  time:setting?.time??"2–4 个月",title:setting?.title??`学习${title}`,goal:intro,
   learn:`完成${title}的一套主资源，配合练习、材料分析和阶段复盘。`,
-  done:`能不用原文解释${title}的核心概念，并提交一份可检查的练习或作品。`,link:id
- }));
- phases.push({time:"持续",title:"完成独立项目",goal:"把分散知识转化为真实的分析与表达能力。",learn:"问题、材料、方法、证据、修订与反思。",done:"发布一份带来源、过程和自我评估的语言项目。",link:"projects"});
+  done:`能不用原文解释${title}的核心概念，并提交一份可检查的练习或作品。`,link:id,mode:setting?.mode??"core"
+ }});
+ phases.push({time:"从第二阶段持续",title:"完成独立项目",goal:"把分散知识转化为真实的分析与表达能力。",learn:"问题、材料、方法、证据、修订与反思。",done:"发布一份带来源、过程和自我评估的语言项目。",link:"projects",mode:"ongoing"});
  return{slug:`language/${track.slug}`,name:track.name,en:track.en,intro:track.intro,caution:track.caution,groups:[start,["起点",[["tools","学习工具"]]],["核心课程",track.courses.map(([id,title])=>[id,title] as const)],["实践与资源",[["projects","项目与进阶方向"],["books","书单与资源"]]]],topics,phases,tools:track.tools,books:track.books,portals:track.portals};
 };
 

@@ -1,1 +1,112 @@
-.plan-intro{font-size:17px;line-height:1.9;color:#454c54}.beginner-note{margin:24px 0 30px;padding:20px 22px;background:#f6f6f4;border-left:3px solid #7f9f89}.beginner-note ul{margin:10px 0 0;padding-left:20px}.beginner-note li{margin:5px 0;color:#50575f}.plan-steps{border-top:1px solid var(--line)}.plan-steps article{display:grid;grid-template-columns:105px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--line)}.phase-meta{display:flex;gap:14px;color:#848b93}.phase-meta>span{font:italic 16px Georgia,serif}.phase-meta small{font-size:10px;line-height:1.5}.phase-meta b{font-size:12px;color:#555d65}.plan-steps h3{font-size:20px;margin:0 0 8px}.phase-goal{margin:0 0 16px;color:#505861}.plan-steps dl{grid-template-columns:1fr;margin:0 0 14px}.plan-steps dl>div{display:grid;grid-template-columns:100px 1fr;gap:12px;padding:9px 0}.plan-steps dt{font-size:12px}.plan-steps dd{line-height:1.7}.plan-steps a{font-size:13px;color:#2457a7}.weekly{margin-top:30px;padding:22px;border:1px solid var(--line);border-radius:7px}.weekly h3{margin:0 0 8px}.weekly p{margin:0;color:#555d65}@media(max-width:600px){.plan-steps article{grid-template-columns:1fr;gap:12px}.plan-steps dl>div{grid-template-columns:1fr;gap:2px}}
+.plan-intro {
+  color: #454c54;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.beginner-note {
+  margin: 24px 0 30px;
+  padding: 20px 22px;
+  border-left: 3px solid #7f9f89;
+  background: #f6f6f4;
+}
+
+.beginner-note ul { margin: 10px 0 0; padding-left: 20px; }
+.beginner-note li { margin: 5px 0; color: #50575f; }
+
+.learning-timeline {
+  margin: 32px 0 38px;
+  padding: 25px 26px;
+  border: 1px solid var(--ink, #252222);
+  background: rgba(255, 255, 255, .18);
+}
+
+.timeline-heading {
+  position: static;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  height: auto;
+  padding: 0 0 21px;
+  border: 0;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.timeline-heading > div:first-child { min-width: 0; }
+.timeline-heading > div:first-child small { color: #858b94; font-size: 9px; letter-spacing: .18em; }
+.timeline-heading h3 { margin: 3px 0 0; font-size: 22px; font-weight: 500; letter-spacing: -.025em; }
+.timeline-summary { display: flex; flex-direction: column; align-items: flex-end; line-height: 1.35; white-space: nowrap; }
+.timeline-summary span, .timeline-summary small { color: #858b94; font-size: 10px; }
+.timeline-summary strong { font-size: 17px; font-weight: 500; }
+
+.timeline-scroll {
+  overflow-x: auto;
+  padding: 8px 2px 13px;
+  scrollbar-color: rgba(37, 34, 34, .28) transparent;
+  scrollbar-width: thin;
+}
+
+.timeline-scroll ol {
+  position: relative;
+  display: grid;
+  grid-auto-columns: minmax(128px, 1fr);
+  grid-auto-flow: column;
+  min-width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-scroll ol::before {
+  position: absolute;
+  top: 17px;
+  right: 18px;
+  left: 18px;
+  height: 1px;
+  background: var(--ink, #252222);
+  content: "";
+  opacity: .28;
+}
+
+.timeline-scroll li { position: relative; z-index: 1; min-width: 128px; padding-right: 20px; }
+.timeline-node { display: grid; place-items: center; width: 35px; height: 35px; border: 1px solid var(--ink, #252222); border-radius: 50%; background: var(--cream, #f5f5f7); font: italic 10px Georgia, serif; }
+.timeline-scroll li.ongoing .timeline-node { background: var(--ink, #252222); color: var(--cream, #f5f5f7); }
+.timeline-scroll li > div { display: flex; flex-direction: column; margin-top: 11px; line-height: 1.45; }
+.timeline-scroll li em { align-self: flex-start; margin-bottom: 5px; padding: 2px 6px; border: 1px solid rgba(37, 34, 34, .18); border-radius: 999px; color: #666b72; font-size: 8px; font-style: normal; letter-spacing: .06em; }
+.timeline-scroll li small { color: #858b94; font-size: 10px; }
+.timeline-scroll li b { max-width: 145px; margin-top: 3px; font-size: 12px; font-weight: 600; }
+
+.timeline-guidance { display: grid; grid-template-columns: 1.25fr 1fr; gap: 22px; margin-top: 17px; padding-top: 16px; border-top: 1px solid rgba(37, 34, 34, .17); }
+.timeline-guidance p { margin: 0; color: #666b72; font-size: 11px; line-height: 1.7; }
+.timeline-guidance b, .timeline-guidance span { color: var(--ink, #252222); font-weight: 600; }
+
+.plan-steps { border-top: 1px solid var(--line); }
+.plan-steps article { display: grid; grid-template-columns: 105px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.phase-meta { display: flex; gap: 14px; color: #848b93; }
+.phase-meta > span { font: italic 16px Georgia, serif; }
+.phase-meta small { font-size: 10px; line-height: 1.5; }
+.phase-meta b { color: #555d65; font-size: 12px; }
+.plan-steps h3 { margin: 0 0 8px; font-size: 20px; }
+.phase-goal { margin: 0 0 16px; color: #505861; }
+.plan-steps dl { grid-template-columns: 1fr; margin: 0 0 14px; }
+.plan-steps dl > div { display: grid; grid-template-columns: 100px 1fr; gap: 12px; padding: 9px 0; }
+.plan-steps dt { font-size: 12px; }
+.plan-steps dd { line-height: 1.7; }
+.plan-steps a { color: #2457a7; font-size: 13px; }
+.weekly { margin-top: 30px; padding: 22px; border: 1px solid var(--line); border-radius: 7px; }
+.weekly h3 { margin: 0 0 8px; }
+.weekly p { margin: 0; color: #555d65; }
+
+@media (max-width: 600px) {
+  .learning-timeline { margin: 25px 0 31px; padding: 20px 18px; }
+  .timeline-heading { align-items: flex-start; }
+  .timeline-heading h3 { font-size: 20px; }
+  .timeline-summary strong { font-size: 15px; }
+  .timeline-scroll { margin-right: -18px; padding-right: 18px; }
+  .timeline-scroll ol { grid-auto-columns: 120px; }
+  .timeline-guidance { grid-template-columns: 1fr; gap: 9px; }
+  .plan-steps article { grid-template-columns: 1fr; gap: 12px; }
+  .plan-steps dl > div { grid-template-columns: 1fr; gap: 2px; }
+}

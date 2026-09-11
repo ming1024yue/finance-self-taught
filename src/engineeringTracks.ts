@@ -1,14 +1,28 @@
-import{r,type Resource,type SubjectConfig,type Topic}from"./subjectTypes";
+import{r,type Phase,type Resource,type SubjectConfig,type Topic}from"./subjectTypes";
 type Course=[string,string,string,Resource[],string?];
 type Track={slug:string;name:string;en:string;intro:string;caution:string;courses:Course[];tools:SubjectConfig["tools"];books:SubjectConfig["books"];portals:SubjectConfig["portals"]};
 const start=["开始之前",[["intro","本站目的"],["how","如何使用本站"],["plan","学习规划"]]] as const;
+const coreTimes:Record<string,string[]>={
+ electrical:["4–6 个月","3–5 个月","3–5 个月","3–5 个月"],
+ mechanical:["4–6 个月","4–6 个月","4–6 个月","3–5 个月"],
+ computer:["3–4 个月","4–6 个月","3–5 个月","3–5 个月"],
+ aerospace:["4–6 个月","3–5 个月","3–5 个月","5–7 个月"],
+ systems:["3–4 个月","4–6 个月","4–6 个月","4–6 个月"],
+ materials:["4–6 个月","4–6 个月","3–5 个月","3–5 个月"]
+};
 const makeTrack=(track:Track):SubjectConfig=>{
  const topics:Record<string,Topic>={tools:{title:"学习工具",intro:`围绕${track.name}建立计算、仿真、设计和实验环境。`,resources:[]},projects:{title:"项目与进阶方向",intro:`以${track.name}的真实约束完成建模、设计、实现、测试和复盘。下面的起点分别对应本学科的核心课程，适合从小型复现逐步发展为综合项目。`,resources:track.courses.map(([, , ,resources])=>resources[0])},books:{title:"书单与资源",intro:"集中查看开放教材与大学官方课程。",resources:[]}};
  track.courses.forEach(([id,title,intro,resources])=>{topics[id]={title,intro,resources}});
  const sections=[...new Set(track.courses.map(course=>course[4]??"核心课程"))];
  const courseGroups=sections.map(section=>[section,track.courses.filter(course=>(course[4]??"核心课程")===section).map(([id,title])=>[id,title] as const)] as const);
- const phases=track.courses.map(([id,title,intro,,section],index)=>({time:index===0?"2–3 个月":section==="现代方向"?"按方向 3–5 个月":"3–5 个月",title:`学习${title}`,goal:intro,learn:section==="现代方向"?`先确认前置要求，再完成${title}的一套主资源和一个可复现实验。`:`完成${title}的主课程、例题和核心习题。`,done:`能独立解释${title}的关键模型，并完成一次计算、仿真或实验。`,link:id}));
- phases.push({time:"持续",title:"完成专业项目",goal:"把分散课程连接为可验证的工程成果。",learn:"需求、模型、设计、测试、数据、文档与安全。",done:"发布可复现的项目文件、测试结果和改进记录。",link:"projects"});
+ const coreCourses=track.courses.filter(course=>course[4]!=="现代方向");
+ const modernCourses=track.courses.filter(course=>course[4]==="现代方向");
+ const phases:Phase[]=coreCourses.map(([id,title,intro],index)=>({time:coreTimes[track.slug]?.[index]??(index===0?"3–4 个月":"3–5 个月"),title:`学习${title}`,goal:intro,learn:`完成${title}的主课程、例题和核心习题；从第二阶段开始，每周留出约四分之一时间推进小型项目。`,done:`能独立解释${title}的关键模型，并完成一次计算、仿真或实验。`,link:id,mode:"core"}));
+ if(modernCourses.length){
+  const choices=modernCourses.map(([,title])=>title).join("、");
+  phases.push({time:"按方向 4–6 个月",title:"选择一个现代工程方向",goal:"在共同核心之后分流，不需要把所有前沿方向依次学完。",learn:`从${choices}中选择一条主线，补齐前置要求并完成一套主资源。`,done:"能说明所选方向与工程核心的联系，并完成一个可复现实验、仿真或原型。",link:modernCourses[0][0],mode:"choice"});
+ }
+ phases.push({time:"从第二阶段持续",title:"完成专业项目",goal:"把分散课程连接为可验证的工程成果。",learn:"需求、模型、设计、测试、数据、文档与安全；后 3–5 个月集中完成综合作品。",done:"发布可复现的项目文件、测试结果和改进记录。",link:"projects",mode:"ongoing"});
  return{slug:`engineering/${track.slug}`,name:track.name,en:track.en,intro:track.intro,caution:track.caution,groups:[start,["起点",[["tools","学习工具"]]],...courseGroups,["实践与资源",[["projects","项目与进阶方向"],["books","书单与资源"]]]],topics,phases,tools:track.tools,books:track.books,portals:track.portals};
 };
 const commonPortals=(name:string,query:string):SubjectConfig["portals"]=>[["MIT",`MIT OCW ${name}`,`https://ocw.mit.edu/search/?q=${query}`,`检索 ${name} 官方公开课程、讲义与作业。`]];
