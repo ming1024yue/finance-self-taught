@@ -22,9 +22,9 @@ const totalLabel=(phases:readonly TimelinePhase[])=>{
 export default function LearningTimeline({phases}:{phases:readonly TimelinePhase[]}){
  const hasOngoing=phases.some(phase=>phase.mode==="ongoing"||phase.time.includes("持续"));
  const hasChoice=phases.some(phase=>phase.mode==="choice");
- return <section className="learning-timeline" aria-labelledby="learning-timeline-title">
+ return <section className="learning-timeline" aria-label="目标：完成相当于本科专业教育的系统训练，能够继续学习前沿领域，并应用所学">
   <header className="timeline-heading">
-   <h3 id="learning-timeline-title">整体时间线</h3>
+   <h3>本科核心 <span>→</span> 前沿 <span>→</span> 应用</h3>
    <p><strong>{totalLabel(phases)}</strong><span>每周 6–10 小时</span></p>
   </header>
   <div className="timeline-scroll" tabIndex={0} aria-label="横向滚动查看全部学习阶段">

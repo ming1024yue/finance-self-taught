@@ -35,6 +35,7 @@
 }
 
 .timeline-heading h3 { margin: 0; font-size: 19px; font-weight: 500; letter-spacing: -.025em; }
+.timeline-heading h3 span { padding: 0 3px; color: #858b94; font-size: .72em; }
 .timeline-heading p { display: flex; align-items: baseline; gap: 9px; margin: 0; white-space: nowrap; }
 .timeline-heading strong { font-size: 15px; font-weight: 500; }
 .timeline-heading span { color: #858b94; font-size: 9px; }
