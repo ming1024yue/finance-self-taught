@@ -13,8 +13,8 @@
 .opportunity-hero aside{max-width:820px;margin-top:30px;padding:18px 22px;background:var(--ink);color:var(--cream)}
 .opportunity-landing .opportunity-hero{min-height:46vh;padding-bottom:60px!important}
 .path-chooser{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
-.path-chooser>a{display:flex;padding:32px 34px 30px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transition:background .22s,color .22s,transform .22s}
-.path-chooser>a:hover{background:var(--ink);color:var(--cream);transform:translateY(-5px)}
+.path-chooser>a{display:flex;padding:32px 34px 30px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transition:background .22s,color .22s}
+.path-chooser>a:hover{background:var(--ink);color:var(--cream)}
 .path-chooser>a>div{min-height:210px;padding:54px 0 36px}
 .path-chooser h2{margin:0 0 14px;padding:0;border:0;font-size:clamp(38px,4.8vw,60px);font-weight:500}
 .path-chooser span{display:block;max-width:370px;color:var(--soft);font-size:17px;line-height:1.75}
