@@ -29,6 +29,7 @@ export default function PlatformHome(){
      <button type="button" aria-expanded={openCategory===category.name} onClick={()=>setOpenCategory(current=>current===category.name?null:category.name)}>{category.name}<i aria-hidden="true"/></button>
      <div className="subject-menu-panel"><MenuItems category={category} onSelect={()=>setOpenCategory(null)}/></div>
     </div>)}
+    <a className="platform-simple-link" href={`${base}opportunities/`} onClick={()=>setOpenCategory(null)}>比赛和资质</a>
     <a className="platform-simple-link" href="#about" onClick={()=>setOpenCategory(null)}>关于</a>
    </nav>
    {active&&<div className="mobile-subject-panel"><strong>{active.name}</strong><MenuItems category={active} onSelect={()=>setOpenCategory(null)}/></div>}
