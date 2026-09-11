@@ -34,10 +34,10 @@ header:not(.platform-header) nav a:first-child::before,
 }
 
 @media (max-width: 800px) {
-  :root { --mobile-header: calc(64px + env(safe-area-inset-top, 0px)); }
+  :root { --mobile-header: calc(100px + env(safe-area-inset-top, 0px)); }
   html { scroll-padding-top: calc(var(--mobile-header) + 18px); }
   body.menu-open { overflow: hidden; }
-  .shell > header { height: var(--mobile-header); padding-top: env(safe-area-inset-top, 0px); }
+  .shell > header:not(.platform-header) { height: var(--mobile-header); padding-top: env(safe-area-inset-top, 0px); }
   .menu-button {
     display: flex; flex: 0 0 38px; width: 38px; height: 38px;
     margin: 0 10px 0 -8px; padding: 9px; border: 0; background: transparent;
@@ -47,12 +47,12 @@ header:not(.platform-header) nav a:first-child::before,
   .menu-open .menu-button span:first-child { transform: translateY(5.5px) rotate(45deg); }
   .menu-open .menu-button span:nth-child(2) { opacity: 0; }
   .menu-open .menu-button span:last-child { transform: translateY(-5.5px) rotate(-45deg); }
-  .shell > header > a { min-width: 0; white-space: nowrap; }
-  .shell > header .mobile-home {
+  .shell > header:not(.platform-header) > a { min-width: 0; white-space: nowrap; }
+  .shell > header:not(.platform-header) .mobile-home {
     display: inline-flex; margin-left: auto; padding: 7px 3px;
     color: #555c64; font-size: 13px; font-weight: 500; align-items: center;
   }
-  .shell > header nav { display: none; }
+  .shell > header:not(.platform-header) nav { display: none; }
   .shell > .sidebar {
     display: block; z-index: 6; inset: var(--mobile-header) auto 0 0; height: auto;
     width: min(82vw, 300px); padding-bottom: calc(30px + env(safe-area-inset-bottom, 0px));

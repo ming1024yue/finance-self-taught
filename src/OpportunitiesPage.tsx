@@ -1,4 +1,4 @@
-import BrandLogo from "./BrandLogo";
+import GlobalHeader from "./GlobalHeader";
 
 const base=import.meta.env.BASE_URL;
 
@@ -80,7 +80,7 @@ const credentialGroups:{id:string;title:string;description:string;items:Credenti
  ]}
 ];
 
-function PageHeader({active}:{active?:"competitions"|"credentials"}){return <header className="opportunity-header"><a className="platform-brand" href={base} aria-label="自学坊首页"><BrandLogo/><b>自学坊</b></a><nav aria-label="页面导航"><a className={active==="competitions"?"active":undefined} href={`${base}opportunities/competitions/`}>比赛</a><a className={active==="credentials"?"active":undefined} href={`${base}opportunities/credentials/`}>资质</a><a href={base}>首页</a></nav></header>}
+function PageHeader(){return <GlobalHeader/>}
 
 function CompetitionCard({item}:{item:Competition}){return <article className="opportunity-card"><div className="opportunity-card-head"><span>{item.access}</span><small>{item.cadence}</small></div><h3><a href={item.url} target="_blank" rel="noreferrer">{item.name}</a></h3><p>{item.note}</p><dl><div><dt>形式</dt><dd>{item.format}</dd></div><div><dt>费用</dt><dd>{item.cost}</dd></div><div><dt>可留下的证明</dt><dd>{item.result}</dd></div></dl></article>}
 
@@ -97,13 +97,13 @@ export default function OpportunitiesPage(){return <div className="opportunity-p
  <section className="path-note"><p>比赛和证书都不是学习的终点。选择与你的目标直接相关、规则透明，并能留下可验证成果的一条路径即可。</p></section>
  </main></div>}
 
-export function CompetitionsPage(){return <div className="opportunity-page"><PageHeader active="competitions"/><main className="opportunity-main">
+export function CompetitionsPage(){return <div className="opportunity-page"><PageHeader/><main className="opportunity-main">
  <section className="opportunity-detail-hero"><a href={`${base}opportunities/`}>← 返回比赛和资质</a><small>COMPETITIONS</small><h1>比赛</h1><p>通过统一题目、明确期限、公开排名或完整作品，检验自己能否真正运用所学知识。</p></section>
  <section className="opportunity-section"><div className="opportunity-heading"><small>COMPETITION DIRECTORY</small><h2>公开比赛</h2><p>优先收录可以线上参与、规则稳定且有官方入口的比赛。身份、地区、费用和 AI 使用规则可能逐届变化。</p></div><nav className="anchor-list" aria-label="比赛分类">{competitionGroups.map(group=><a href={`#${group.id}`} key={group.id}>{group.title}</a>)}</nav>{competitionGroups.map(group=><section className="opportunity-group" id={group.id} key={group.id}><div className="group-heading"><div><small>{group.en}</small><h2>{group.title}</h2></div><p>{group.description}</p></div><div className="opportunity-grid">{group.items.map(item=><CompetitionCard item={item} key={item.name}/>)}</div></section>)}</section>
  <VerificationNote kind="赛事"/>
  </main></div>}
 
-export function CredentialsPage(){return <div className="opportunity-page"><PageHeader active="credentials"/><main className="opportunity-main">
+export function CredentialsPage(){return <div className="opportunity-page"><PageHeader/><main className="opportunity-main">
  <section className="opportunity-detail-hero"><a href={`${base}opportunities/`}>← 返回比赛和资质</a><small>CREDENTIALS</small><h1>资质</h1><p>通过规范考试取得可验证的成绩或职业资格，证明某一领域的知识与实践水平。</p><aside>通过单门考试不一定等于取得完整资格。报名前请确认学历、工作经验、会员资格与证书有效期要求。</aside></section>
  <section className="opportunity-section"><div className="opportunity-heading"><small>CREDENTIAL DIRECTORY</small><h2>资格与能力考试</h2><p>只收录考试要求、认证条件和官方验证方式较清楚的体系。费用、考期、有效期与地区政策以报名时的官方页面为准。</p></div><nav className="anchor-list" aria-label="资质分类">{credentialGroups.map(group=><a href={`#${group.id}`} key={group.id}>{group.title}</a>)}</nav>{credentialGroups.map(group=><section className="opportunity-group" id={group.id} key={group.id}><div className="group-heading"><h2>{group.title}</h2><p>{group.description}</p></div><div className="opportunity-grid">{group.items.map(item=><CredentialCard item={item} key={item.name}/>)}</div></section>)}</section>
  <VerificationNote kind="考试"/>

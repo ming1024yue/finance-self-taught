@@ -1,5 +1,6 @@
 /* eslint-disable no-irregular-whitespace -- full-width spacing is intentional in Chinese prose */
 import {mathGroups} from "./mathData";
+import GlobalHeader from "./GlobalHeader";
 import LearningTimeline from "./LearningTimeline";
 import type {Phase} from "./subjectTypes";
 const b=import.meta.env.BASE_URL,u=(p:string)=>b+p.replace(/^\//,"");
@@ -17,5 +18,5 @@ export default function MathHome(){return <div className="shell"><MathHeader/><M
 <p className="plan-intro">目标是完成相当于本科数学专业教育的系统训练：掌握完整的核心知识与证明能力，能够继续学习前沿领域，并通过建模、计算或研究应用所学。以下时间按每周 6–10 小时估算。</p>
 <div className="beginner-note"><strong>开始前先建立四个习惯</strong><ul><li>每一章至少完成一组不看答案的习题，错误题比收藏新资源更重要。</li><li>遇到定义时自己写例子与反例，遇到定理时先问条件为什么不能删除。</li><li>计算卡住就拆成更小步骤；证明卡住就从结论倒推需要什么条件。</li><li>保留一份错题与问题日志，每周复盘，而不是追求一次性全部理解。</li></ul></div><LearningTimeline phases={phases}/><div className="plan-steps">{phases.map(p=><article key={p.n}><div className="phase-meta"><span>{p.n}</span><small>建议用时<br/><b>{p.time}</b></small></div><div><h3>{p.title}</h3><p className="phase-goal">{p.goal}</p><dl><div><dt>主要学习内容</dt><dd>{p.learn}</dd></div><div><dt>完成标志</dt><dd>{p.done}</dd></div></dl><a href={u(`math/topics/${p.link}/`)}>进入相关章节 →</a></div></article>)}</div><div className="weekly"><h3>适合初学者的一周节奏</h3><p><b>2 小时课程</b>：理解新定义与例题　·　<b>3–4 小时练习</b>：独立计算和证明　·　<b>1 小时复盘</b>：整理错误与反例　·　<b>1–2 小时实验</b>：用图像、代码或现实问题验证概念。</p></div></section></main></div>}
 
-export function MathHeader(){const toggle=(button?:HTMLButtonElement)=>{const open=document.body.classList.toggle("menu-open");button?.setAttribute("aria-expanded",String(open))};return <><header><button className="menu-button" aria-label="打开数学目录" aria-expanded="false" onClick={e=>toggle(e.currentTarget)}><span/><span/><span/></button><a href={`${b}math/`}><b>自学数学</b></a><a className="mobile-home" href={b} aria-label="返回网站总首页">总首页</a><nav><a href={b}>学科首页</a><a href={u("opportunities/")}>比赛和资质</a><a href="https://github.com/ming1024yue/finance-self-taught/issues" target="_blank" rel="noreferrer">反馈与共建</a></nav></header><button className="mobile-overlay" aria-label="关闭数学目录" onClick={()=>toggle()}/></>}
+export function MathHeader(){return <GlobalHeader sidebarLabel="数学"/>}
 export function MathSide({active=""}:{active?:string}){return <aside className="sidebar"><nav>{mathGroups.map(([group,items])=><section key={group}><h3>{group}</h3>{items.map(([id,name])=><a className={id===active?"active":""} key={id} href={["intro","how","plan"].includes(id)?`${b}math/#${id}`:u(`math/topics/${id}/`)}>{name}</a>)}</section>)}</nav></aside>}

@@ -1,9 +1,4 @@
 .opportunity-page{min-height:100vh;background:var(--cream)}
-.opportunity-header{justify-content:space-between}
-.opportunity-header nav{margin-left:auto;display:flex;align-items:center;gap:4px}
-.opportunity-header nav a{padding:8px 13px;border-radius:999px;font-size:12px;transition:color .2s,background .2s,transform .2s}
-.opportunity-header nav a:hover{color:var(--cream);background:var(--ink);transform:translateY(-2px)}
-.opportunity-header nav a.active{color:var(--cream);background:var(--ink)}
 .opportunity-main{margin:0;padding:142px clamp(24px,7vw,110px) 90px}
 .opportunity-main>section{max-width:1120px;margin:0 auto}
 .opportunity-hero{min-height:58vh;display:flex;flex-direction:column;justify-content:center;padding-bottom:90px!important}
@@ -67,12 +62,7 @@
 .verification-note h2{margin:8px 0 12px;padding:0;border:0}
 .verification-note p{max-width:760px;color:var(--soft)}
 @media(max-width:800px){
- .opportunity-header{height:calc(64px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) 14px 0}
- .opportunity-header .brand-logo{width:21px;height:21px}
- .opportunity-header .platform-brand b{font-size:13px}
- .opportunity-header nav{gap:0}
- .opportunity-header nav a{padding:7px 8px;font-size:11px}
- .opportunity-main{padding:calc(100px + env(safe-area-inset-top,0px)) 20px 70px}
+ .opportunity-main{padding:calc(130px + env(safe-area-inset-top,0px)) 20px 70px}
  .opportunity-hero{min-height:auto;padding:35px 0 70px!important}
  .opportunity-hero h1{font-size:39px}
  .opportunity-hero>p{font-size:17px}
