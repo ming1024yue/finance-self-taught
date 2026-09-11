@@ -80,16 +80,31 @@ const credentialGroups:{id:string;title:string;description:string;items:Credenti
  ]}
 ];
 
-function PageHeader(){return <header className="opportunity-header"><a className="platform-brand" href={base} aria-label="自学坊首页"><BrandLogo/><b>自学坊</b></a><nav aria-label="页面导航"><a href="#competitions">比赛</a><a href="#credentials">资质</a><a href={base}>首页</a></nav></header>}
+function PageHeader({active}:{active?:"competitions"|"credentials"}){return <header className="opportunity-header"><a className="platform-brand" href={base} aria-label="自学坊首页"><BrandLogo/><b>自学坊</b></a><nav aria-label="页面导航"><a className={active==="competitions"?"active":undefined} href={`${base}opportunities/competitions/`}>比赛</a><a className={active==="credentials"?"active":undefined} href={`${base}opportunities/credentials/`}>资质</a><a href={base}>首页</a></nav></header>}
 
 function CompetitionCard({item}:{item:Competition}){return <article className="opportunity-card"><div className="opportunity-card-head"><span>{item.access}</span><small>{item.cadence}</small></div><h3><a href={item.url} target="_blank" rel="noreferrer">{item.name}</a></h3><p>{item.note}</p><dl><div><dt>形式</dt><dd>{item.format}</dd></div><div><dt>费用</dt><dd>{item.cost}</dd></div><div><dt>可留下的证明</dt><dd>{item.result}</dd></div></dl></article>}
 
 function CredentialCard({item}:{item:Credential}){return <article className="opportunity-card credential-card"><div className="opportunity-card-head"><span>{item.field}</span><small>{item.level}</small></div><h3><a href={item.url} target="_blank" rel="noreferrer">{item.name}</a></h3><p>{item.note}</p><dl><div><dt>考试形式</dt><dd>{item.format}</dd></div><div><dt>前置与资格</dt><dd>{item.requirement}</dd></div><div><dt>完成结果</dt><dd>{item.result}</dd></div></dl></article>}
 
-export default function OpportunitiesPage(){return <div className="opportunity-page"><PageHeader/><main className="opportunity-main">
- <section className="opportunity-hero"><small>COMPETITIONS & CREDENTIALS</small><h1>比赛和资质</h1><p>让自学不只停留在“学过”。通过公开竞赛留下排名、作品和研究报告，或通过规范考试取得可验证的成绩与资格。</p><aside>证书不是知识本身，比赛也不是唯一标准。优先选择与你的学习目标直接相关、规则透明，并能产出可公开验证成果的项目。</aside></section>
- <section className="proof-guide"><div><b>刚开始</b><span>选择免费、常年开放或可虚拟参赛的项目，先完成一次。</span></div><div><b>已有基础</b><span>参加有统一题目、截止时间和公开评价的正式比赛。</span></div><div><b>职业验证</b><span>只在目标岗位真正认可时，投入付费资格考试。</span></div></section>
- <section id="competitions" className="opportunity-section"><div className="opportunity-heading"><small>01 / COMPETITIONS</small><h2>公开比赛</h2><p>优先收录可以线上参与、规则稳定且有官方入口的比赛。身份、地区、费用和 AI 使用规则可能逐届变化。</p></div><nav className="anchor-list" aria-label="比赛分类">{competitionGroups.map(group=><a href={`#${group.id}`} key={group.id}>{group.title}</a>)}</nav>{competitionGroups.map(group=><section className="opportunity-group" id={group.id} key={group.id}><div className="group-heading"><div><small>{group.en}</small><h2>{group.title}</h2></div><p>{group.description}</p></div><div className="opportunity-grid">{group.items.map(item=><CompetitionCard item={item} key={item.name}/>)}</div></section>)}</section>
- <section id="credentials" className="opportunity-section"><div className="opportunity-heading"><small>02 / CREDENTIALS</small><h2>资格与能力考试</h2><p>只收录考试要求、认证条件和官方验证方式较清楚的体系。费用、考期、有效期与地区政策以报名时的官方页面为准。</p></div><nav className="anchor-list" aria-label="资质分类">{credentialGroups.map(group=><a href={`#${group.id}`} key={group.id}>{group.title}</a>)}</nav>{credentialGroups.map(group=><section className="opportunity-group" id={group.id} key={group.id}><div className="group-heading"><h2>{group.title}</h2><p>{group.description}</p></div><div className="opportunity-grid">{group.items.map(item=><CredentialCard item={item} key={item.name}/>)}</div></section>)}</section>
- <section className="verification-note"><small>LAST REVIEWED / 2026.09</small><h2>使用前请再次核对</h2><p>赛事和考试会调整时间、资格、费用、地区限制与规则。本站只负责筛选和说明，不代替主办方公告；报名和付款前务必阅读当届官方规则。</p></section>
+function VerificationNote({kind}:{kind:"赛事"|"考试"}){return <section className="verification-note"><small>LAST REVIEWED / 2026.09</small><h2>使用前请再次核对</h2><p>{kind}会调整时间、资格、费用、地区限制与规则。本站只负责筛选和说明，不代替主办方公告；报名和付款前务必阅读当届官方规则。</p></section>}
+
+export default function OpportunitiesPage(){return <div className="opportunity-page"><PageHeader/><main className="opportunity-main opportunity-landing">
+ <section className="opportunity-hero"><small>COMPETITIONS & CREDENTIALS</small><h1>比赛和资质</h1><p>选择一种方式，把学习成果变成可以被看见、被验证的能力证明。</p></section>
+ <section className="path-chooser" aria-label="选择验证路径">
+  <a href={`${base}opportunities/competitions/`}><small>01 / COMPETITIONS</small><div><h2>比赛</h2><span>用公开题目、排名和作品检验应用能力。</span></div><b>进入比赛目录</b></a>
+  <a href={`${base}opportunities/credentials/`}><small>02 / CREDENTIALS</small><div><h2>资质</h2><span>用规范考试和职业认证证明专业能力。</span></div><b>进入资质目录</b></a>
+ </section>
+ <section className="path-note"><p>比赛和证书都不是学习的终点。选择与你的目标直接相关、规则透明，并能留下可验证成果的一条路径即可。</p></section>
+ </main></div>}
+
+export function CompetitionsPage(){return <div className="opportunity-page"><PageHeader active="competitions"/><main className="opportunity-main">
+ <section className="opportunity-detail-hero"><a href={`${base}opportunities/`}>← 返回比赛和资质</a><small>COMPETITIONS</small><h1>比赛</h1><p>通过统一题目、明确期限、公开排名或完整作品，检验自己能否真正运用所学知识。</p></section>
+ <section className="opportunity-section"><div className="opportunity-heading"><small>COMPETITION DIRECTORY</small><h2>公开比赛</h2><p>优先收录可以线上参与、规则稳定且有官方入口的比赛。身份、地区、费用和 AI 使用规则可能逐届变化。</p></div><nav className="anchor-list" aria-label="比赛分类">{competitionGroups.map(group=><a href={`#${group.id}`} key={group.id}>{group.title}</a>)}</nav>{competitionGroups.map(group=><section className="opportunity-group" id={group.id} key={group.id}><div className="group-heading"><div><small>{group.en}</small><h2>{group.title}</h2></div><p>{group.description}</p></div><div className="opportunity-grid">{group.items.map(item=><CompetitionCard item={item} key={item.name}/>)}</div></section>)}</section>
+ <VerificationNote kind="赛事"/>
+ </main></div>}
+
+export function CredentialsPage(){return <div className="opportunity-page"><PageHeader active="credentials"/><main className="opportunity-main">
+ <section className="opportunity-detail-hero"><a href={`${base}opportunities/`}>← 返回比赛和资质</a><small>CREDENTIALS</small><h1>资质</h1><p>通过规范考试取得可验证的成绩或职业资格，证明某一领域的知识与实践水平。</p><aside>通过单门考试不一定等于取得完整资格。报名前请确认学历、工作经验、会员资格与证书有效期要求。</aside></section>
+ <section className="opportunity-section"><div className="opportunity-heading"><small>CREDENTIAL DIRECTORY</small><h2>资格与能力考试</h2><p>只收录考试要求、认证条件和官方验证方式较清楚的体系。费用、考期、有效期与地区政策以报名时的官方页面为准。</p></div><nav className="anchor-list" aria-label="资质分类">{credentialGroups.map(group=><a href={`#${group.id}`} key={group.id}>{group.title}</a>)}</nav>{credentialGroups.map(group=><section className="opportunity-group" id={group.id} key={group.id}><div className="group-heading"><h2>{group.title}</h2><p>{group.description}</p></div><div className="opportunity-grid">{group.items.map(item=><CredentialCard item={item} key={item.name}/>)}</div></section>)}</section>
+ <VerificationNote kind="考试"/>
  </main></div>}

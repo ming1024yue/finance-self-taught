@@ -3,13 +3,33 @@
 .opportunity-header nav{margin-left:auto;display:flex;align-items:center;gap:4px}
 .opportunity-header nav a{padding:8px 13px;border-radius:999px;font-size:12px;transition:color .2s,background .2s,transform .2s}
 .opportunity-header nav a:hover{color:var(--cream);background:var(--ink);transform:translateY(-2px)}
+.opportunity-header nav a.active{color:var(--cream);background:var(--ink)}
 .opportunity-main{margin:0;padding:142px clamp(24px,7vw,110px) 90px}
 .opportunity-main>section{max-width:1120px;margin:0 auto}
 .opportunity-hero{min-height:58vh;display:flex;flex-direction:column;justify-content:center;padding-bottom:90px!important}
-.opportunity-hero>small,.opportunity-heading>small,.group-heading small,.verification-note>small{font-size:10px;font-weight:800;letter-spacing:.18em}
+.opportunity-hero>small,.opportunity-detail-hero>small,.opportunity-heading>small,.group-heading small,.verification-note>small,.path-chooser small{font-size:10px;font-weight:800;letter-spacing:.18em}
 .opportunity-hero h1{margin:14px 0 24px;font-size:clamp(40px,5.2vw,66px);font-weight:500;line-height:1.05;letter-spacing:-.055em}
 .opportunity-hero>p{max-width:820px;margin:0;color:var(--soft);font-size:20px;line-height:1.85}
 .opportunity-hero aside{max-width:820px;margin-top:30px;padding:18px 22px;background:var(--ink);color:var(--cream)}
+.opportunity-landing .opportunity-hero{min-height:46vh;padding-bottom:60px!important}
+.path-chooser{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+.path-chooser>a{display:flex;padding:32px 34px 30px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transition:background .22s,color .22s,transform .22s}
+.path-chooser>a:hover{background:var(--ink);color:var(--cream);transform:translateY(-5px)}
+.path-chooser>a>div{min-height:210px;padding:54px 0 36px}
+.path-chooser h2{margin:0 0 14px;padding:0;border:0;font-size:clamp(38px,4.8vw,60px);font-weight:500}
+.path-chooser span{display:block;max-width:370px;color:var(--soft);font-size:17px;line-height:1.75}
+.path-chooser>a>b{font-size:12px;font-weight:700;letter-spacing:.06em}
+.path-chooser>a>b::after{content:" →"}
+.path-chooser>a:hover span{color:#bbb9b2}
+.path-note{padding:28px 0 90px!important}
+.path-note p{max-width:720px;margin:0;color:var(--soft)}
+.opportunity-detail-hero{padding:54px 0 100px!important}
+.opportunity-detail-hero>a{display:inline-block;margin-bottom:70px;color:var(--soft);font-size:12px}
+.opportunity-detail-hero>a:hover{color:var(--ink)}
+.opportunity-detail-hero>small{display:block}
+.opportunity-detail-hero h1{margin:14px 0 24px;font-size:clamp(40px,5.2vw,66px);font-weight:500;line-height:1.05;letter-spacing:-.055em}
+.opportunity-detail-hero>p{max-width:820px;margin:0;color:var(--soft);font-size:20px;line-height:1.85}
+.opportunity-detail-hero aside{max-width:820px;margin-top:30px;padding:18px 22px;background:var(--ink);color:var(--cream)}
 .proof-guide{display:grid;grid-template-columns:repeat(3,1fr);padding-bottom:110px!important}
 .proof-guide>div{display:flex;min-height:130px;padding:22px 24px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);flex-direction:column;gap:9px}
 .proof-guide>div+div{border-left:1px solid var(--ink)}
@@ -56,6 +76,16 @@
  .opportunity-hero{min-height:auto;padding:35px 0 70px!important}
  .opportunity-hero h1{font-size:39px}
  .opportunity-hero>p{font-size:17px}
+ .opportunity-landing .opportunity-hero{padding-bottom:50px!important}
+ .path-chooser{grid-template-columns:1fr}
+ .path-chooser>a{padding:24px 22px}
+ .path-chooser>a>div{min-height:145px;padding:36px 0 28px}
+ .path-chooser h2{font-size:38px}
+ .path-note{padding-bottom:65px!important}
+ .opportunity-detail-hero{padding:25px 0 76px!important}
+ .opportunity-detail-hero>a{margin-bottom:52px}
+ .opportunity-detail-hero h1{font-size:39px}
+ .opportunity-detail-hero>p{font-size:17px}
  .proof-guide{grid-template-columns:1fr;padding-bottom:85px!important}
  .proof-guide>div{min-height:auto;padding:18px 0}
  .proof-guide>div+div{border-left:0;border-top:0}

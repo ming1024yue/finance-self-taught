@@ -1,6 +1,6 @@
 import{createRoot}from"react-dom/client";
 import PlatformHome from"./PlatformHome";
-import OpportunitiesPage from"./OpportunitiesPage";
+import OpportunitiesPage,{CompetitionsPage,CredentialsPage}from"./OpportunitiesPage";
 import KnowledgeGraphPlacement from"./KnowledgeGraphPlacement";
 import Comments from"./Comments";
 import FinanceHome from"./Home";
@@ -46,7 +46,7 @@ const subject=subjects.find(item=>path.match(new RegExp(`^/${item.slug}(?:/|$)`)
 const matchedSubjectTopic=subject?path.match(new RegExp(`^/${subject.slug}/topics/([^/]+)`))?.[1]:undefined;
 const subjectTopic=subject?.slug==="literature"&&matchedSubjectTopic==="chinese"?"world":matchedSubjectTopic;
 const genericPage=subject?(subjectTopic==="books"?<SubjectBooksPage subject={subject}/>:subjectTopic?<SubjectTopicPage subject={subject} topicSlug={subjectTopic}/>:<SubjectHome subject={subject}/>):null;
-const page=genericPage??(mathTopic==="books"?<MathBooksPage/>:mathTopic?<MathTopicPage slug={mathTopic}/>:path.match(/^\/math\/?$/)?<MathHome/>:financeTopic==="books"?<BooksPage/>:financeTopic?<TopicPage slug={financeTopic}/>:path.match(/^\/finance\/?$/)?<FinanceHome/>:path.match(/^\/opportunities\/?$/)?<OpportunitiesPage/>:<><PlatformHome/><KnowledgeGraphPlacement/></>);
+const page=genericPage??(mathTopic==="books"?<MathBooksPage/>:mathTopic?<MathTopicPage slug={mathTopic}/>:path.match(/^\/math\/?$/)?<MathHome/>:financeTopic==="books"?<BooksPage/>:financeTopic?<TopicPage slug={financeTopic}/>:path.match(/^\/finance\/?$/)?<FinanceHome/>:path.match(/^\/opportunities\/competitions\/?$/)?<CompetitionsPage/>:path.match(/^\/opportunities\/credentials\/?$/)?<CredentialsPage/>:path.match(/^\/opportunities\/?$/)?<OpportunitiesPage/>:<><PlatformHome/><KnowledgeGraphPlacement/></>);
 const discussionKey=subject?`${subject.slug}/${subjectTopic??"home"}`:mathTopic?`math/${mathTopic}`:path.match(/^\/math\/?$/)?"math/home":financeTopic?`finance/${financeTopic}`:path.match(/^\/finance\/?$/)?"finance/home":null;
 createRoot(document.getElementById("root")!).render(<>{page}{discussionKey&&<div className="learning-comments"><Comments discussionKey={discussionKey}/></div>}<aside className="education-notice" aria-label="使用说明">本站仅提供教育与学习信息；请尊重资源版权，勿将第三方内容用于未经授权的商业用途。</aside></>);
 preserveSidebarScroll();enableThemeInteraction();
