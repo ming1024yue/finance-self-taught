@@ -1,4 +1,5 @@
 import GlobalHeader from "./GlobalHeader";
+import LearningPurposeSurvey from "./LearningPurposeSurvey";
 
 export default function PlatformHome(){
  return <div className="platform">
@@ -9,6 +10,7 @@ export default function PlatformHome(){
     <h1>为每一门学科，<br/>提供一条真正可走的自学路径。</h1>
     <p>本站希望减少优质教育资源与学习者之间的信息差。我们按照知识依赖关系，整理公开课、教材、论文、工具与实践项目，帮助零基础学习者逐步建立完整的知识体系。</p>
    </section>
+   <LearningPurposeSurvey/>
    <section id="about" className="platform-about">
     <h2>愿景</h2>
     <p className="platform-vision">我们相信，科技终将抹平知识的边界，让每个人都能自由、免费地学习一切。</p>
