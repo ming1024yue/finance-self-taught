@@ -76,7 +76,10 @@ const credentialGroups:{id:string;title:string;description:string;items:Credenti
  {id:"language-credentials",title:"语言能力考试",description:"语言考试证明特定时间点的听、说、读、写水平，不能代替长期使用能力。",items:[
   {name:"IELTS",url:"https://ielts.org/take-a-test",field:"学术英语与通用英语",level:"按目标分数",format:"计算机考试，口语由考官进行",requirement:"无学历前置要求",result:"获得 Test Report Form；通常建议两年内使用",note:"用于留学、工作或移民时，应先确认接收机构要求 Academic、General Training 或特定考试类型。"},
   {name:"TOEFL iBT",url:"https://www.ets.org/toefl/test-takers/ibt/about.html",field:"学术英语",level:"按目标分数",format:"考试中心或符合地区政策的 Home Edition",requirement:"无学历前置要求",result:"官方成绩自考试日起有效两年",note:"2026 年起成绩报告采用新的 1–6 分制，并在过渡期提供可比总分；申请前查看院校最新要求。"},
-  {name:"HSK",url:"https://www.chinesetest.cn/hsk",field:"汉语作为第二语言",level:"分级考试",format:"考试形式和考点按地区安排",requirement:"面向非汉语母语学习者",result:"标准化汉语水平成绩",note:"常用于来华学习、奖学金和中文能力证明；等级与有效期要求由接收机构决定。"}
+  {name:"JLPT 日本语能力测试",url:"https://www.jlpt.jp/e/about/levelsummary.html",field:"日语",level:"N5 至 N1",format:"语言知识、阅读与听力的分级考试",requirement:"无学历前置要求；按当前能力选择级别",result:"获得对应级别的成绩单，合格者获得认定书",note:"N5 为基础起点，N1 要求理解较复杂、抽象且语速自然的日语；考试不直接测试口语和写作，准备时仍需单独训练输出能力。"},
+  {name:"DELF / DALF",url:"https://www.france-education-international.fr/en/diplome/delf-tout-public",field:"法语",level:"A1 至 C2",format:"按级别测试听、说、读、写四项能力",requirement:"无学历前置要求；根据 CEFR 水平选择 DELF 或 DALF",result:"通过后获得对应级别的法国国家文凭",note:"DELF 覆盖 A1–B2，DALF 覆盖 C1–C2，适合用完整的四项技能检验法语水平。"},
+  {name:"Goethe-Zertifikat",url:"https://www.goethe.de/ins/cn/zh/spr/prf.html",field:"德语",level:"A1 至 C2",format:"按级别和考试类型测试听、说、读、写",requirement:"无学历前置要求；部分级别可按模块参加",result:"通过相应考试或模块后获得歌德学院证书",note:"级别与欧洲语言共同参考框架对应；报名前应根据留学、工作或签证用途确认所需考试和最低等级。"},
+  {name:"DELE",url:"https://examenes.cervantes.es/es/dele/que-es",field:"西班牙语",level:"A1 至 C2",format:"按级别测试阅读、听力、写作与口语",requirement:"无学历前置要求；按当前水平选择级别",result:"通过后获得对应级别的 DELE 西班牙语文凭",note:"由塞万提斯学院组织，适合需要长期、正式西班牙语能力证明的学习者；具体考期和考点以当届公告为准。"}
  ]}
 ];
 
